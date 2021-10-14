@@ -1,7 +1,7 @@
 package classstructureattributes;
 /*
 Hozz létre egy Client osztályt, melynek három attribútuma van: név (name), születési év (year) és cím (address).
-Típusaik rendre String, int és String.
+Típusaik rendre String, int és String..
  */
 public class Client {
 

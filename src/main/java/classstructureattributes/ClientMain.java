@@ -3,7 +3,7 @@ package classstructureattributes;
 /*
 Hozz létre egy main() metódust a ClientMain osztályba, amelyben kipróbálod a Client osztály működését.
 Példányosítani kell egy objektumot a Client osztály alapján, majd kérd be az attribútumok értékét a felhasználótól.
-Ellenőrzésképp írd ki minden attribútumának értékét a konzolra!
+Ellenőrzésképp írd ki minden attribútumának értékét a konzolra!.
  */
 
 import java.util.Scanner;

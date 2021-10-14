@@ -2,7 +2,7 @@ package classstructureattributes;
 
 import java.util.Scanner;
 
-/*
+/*.
 Készíts main() metódust egy Music osztályba, ahol kérd be a felhasználótól a kedvenc zeneszáma adatait! Ellenőrzésképp
 írd ki a megadott adatokat előadó - cím (hossz percben) formában, azaz Britney Spears - Oops!...I Did It Again (4 perc)!
  */

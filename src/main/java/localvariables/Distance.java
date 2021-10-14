@@ -1,3 +1,5 @@
+package localvariables;
+
 public class Distance {
 
     private double distanceInKm;

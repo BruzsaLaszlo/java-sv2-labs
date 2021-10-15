@@ -1,3 +1,3 @@
-## java-sv2-labs
+java-sv2-labs
 
 #Java Backend tanfolyam videós feladatai

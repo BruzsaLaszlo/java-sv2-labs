@@ -22,23 +22,23 @@ a Java osztályokat fogjátok alapszinten megismerni.
 ## Bevezetés a Java osztályok használatába
 
 * [x] [Kiírás és beolvasás konzolról videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709894-kiiras-es-beolvasas-konzolrol)
-* [ ] Kiírás és beolvasás konzolról gyakorlati feladat
-* [ ] [Objektumok és attribútumok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709892-objektumok-es-attributumok)
-* [ ] Objektumok és attribútumok gyakorlati feladat
-* [ ] [Metódusok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709890-metodusok)
-* [ ] Metódusok gyakorlati feladat
-* [ ] [Konstruktorok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709840-konstruktorok)
-* [ ] Konstruktorok gyakorlati feladat
-* [ ] [UML, példányok konzol íráskor/olvasáskor videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709862-uml-peldanyok-konzol-iraskor-olvasaskor)
-* [ ] UML, példányok konzol íráskor/olvasáskor gyakorlati feladat
+* [x] Kiírás és beolvasás konzolról gyakorlati feladat
+* [x] [Objektumok és attribútumok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709892-objektumok-es-attributumok)
+* [x] Objektumok és attribútumok gyakorlati feladat
+* [x] [Metódusok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709890-metodusok)
+* [x] Metódusok gyakorlati feladat
+* [x] [Konstruktorok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709840-konstruktorok)
+* [x] Konstruktorok gyakorlati feladat
+* [x] [UML, példányok konzol íráskor/olvasáskor videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709862-uml-peldanyok-konzol-iraskor-olvasaskor)
+* [x] UML, példányok konzol íráskor/olvasáskor gyakorlati feladat
 
 ## Konzultációk
 
-* [ ] 2021-10-11 konzultáció részvétel/videó
-* [ ] 2021-10-11 konzultáció gyakorlati feladat
-* [ ] 2021-10-12 konzultáció részvétel/videó
-* [ ] 2021-10-12 konzultáció gyakorlati feladat
-* [ ] 2021-10-14 konzultáció részvétel/videó
-* [ ] 2021-10-14 konzultáció gyakorlati feladat
-* [ ] 2021-10-15 konzultáció részvétel/videó
-* [ ] 2021-10-15 konzultáció gyakorlati feladat
+* [x] 2021-10-11 konzultáció részvétel/videó
+* [x] 2021-10-11 konzultáció gyakorlati feladat
+* [x] 2021-10-12 konzultáció részvétel/videó
+* [x] 2021-10-12 konzultáció gyakorlati feladat
+* [x] 2021-10-14 konzultáció részvétel/videó
+* [x] 2021-10-14 konzultáció gyakorlati feladat
+* [x] 2021-10-15 konzultáció részvétel/videó
+* [x] 2021-10-15 konzultáció gyakorlati feladat

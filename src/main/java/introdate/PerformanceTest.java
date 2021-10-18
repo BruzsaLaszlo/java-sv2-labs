@@ -9,8 +9,8 @@ public class PerformanceTest {
 
         Performance performance = new Performance(LocalDate.of(1989, 6, 2),
                 "Queen",
-                LocalTime.of(18, 00),
-                LocalTime.of(20, 00));
+                LocalTime.of(18, 0),
+                LocalTime.of(20, 0));
 
         System.out.println(performance.getInfo());
     }

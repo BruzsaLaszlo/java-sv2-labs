@@ -1,5 +1,5 @@
 # Második hét (2021-10-18 - 2021-10-22)
-
+week02 folyamatban
 Ezen a héten a Java nyelv építőköveit, valamint
 a bonyolultabb típusokat fogjátok alapszinten megismerni.
 
@@ -32,8 +32,8 @@ a bonyolultabb típusokat fogjátok alapszinten megismerni.
 * [x] Tömbök gyakorlati feladat
 * [x] [Parancssori paraméterek](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/17496052-parancssori-parameterek)
 * [x] Parancssori paraméterek gyakorlati feladat
-* [ ] [Tömbök tömbje](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709631-tombok-tombje)
-* [ ] Tömbök tömbje gyakorlati feladat
+* [x] [Tömbök tömbje](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709631-tombok-tombje)
+* [x] Tömbök tömbje gyakorlati feladat
 * [ ] [Tömbök kezelése](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709801-tombok-kezelese)
 * [ ] Tömbök kezelése gyakorlati feladat
 * [ ] [Lista](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709852-lista)

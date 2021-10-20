@@ -34,10 +34,10 @@ a bonyolultabb típusokat fogjátok alapszinten megismerni.
 * [x] Parancssori paraméterek gyakorlati feladat
 * [x] [Tömbök tömbje](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709631-tombok-tombje)
 * [x] Tömbök tömbje gyakorlati feladat
-* [ ] [Tömbök kezelése](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709801-tombok-kezelese)
-* [ ] Tömbök kezelése gyakorlati feladat
-* [ ] [Lista](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709852-lista)
-* [ ] Lista gyakorlati feladat
+* [x] [Tömbök kezelése](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709801-tombok-kezelese)
+* [x] Tömbök kezelése gyakorlati feladat
+* [x] [Lista](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709852-lista)
+* [x] Lista gyakorlati feladat
 * [ ] [Lista létrehozása](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/27993631-lista-letrehozasa)
 * [ ] Lista létrehozása gyakorlati feladat
 * [ ] [Ciklusok fajtái](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/27993677-ciklusok-fajtai)

@@ -1,7 +1,5 @@
 package localvariables;
 
-import java.util.Random;
-
 public class DistanceMain {
 
     public static void main(String[] args) {

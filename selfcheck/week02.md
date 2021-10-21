@@ -1,5 +1,4 @@
 # Második hét (2021-10-18 - 2021-10-22)
-week02 folyamatban
 Ezen a héten a Java nyelv építőköveit, valamint
 a bonyolultabb típusokat fogjátok alapszinten megismerni.
 
@@ -42,14 +41,14 @@ a bonyolultabb típusokat fogjátok alapszinten megismerni.
 * [x] Lista létrehozása gyakorlati feladat
 * [x] [Ciklusok fajtái](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/27993677-ciklusok-fajtai)
 * [x] Ciklusok fajtái gyakorlati feladat
-* [ ] [Módosítás bejáráskor](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/27993685-modositas-bejaraskor)
-* [ ] Módosítás bejáráskor gyakorlati feladat
-* [ ] [Debug](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709799-debug)
-* [ ] Debug gyakorlati feladat
-* [ ] [Konstans értékek használata](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709785-konstans-ertekek-hasznalata)
-* [ ] Konstans értékek használata gyakorlati feladat
-* [ ] [Math és Random osztály](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709760-math-es-random-osztaly)
-* [ ] Math és Random osztály gyakorlati feladat
+* [x] [Módosítás bejáráskor](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/27993685-modositas-bejaraskor)
+* [x] Módosítás bejáráskor gyakorlati feladat
+* [x] [Debug](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709799-debug)
+* [x] Debug gyakorlati feladat
+* [x] [Konstans értékek használata](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709785-konstans-ertekek-hasznalata)
+* [x] Konstans értékek használata gyakorlati feladat
+* [x] [Math és Random osztály](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709760-math-es-random-osztaly)
+* [x] Math és Random osztály gyakorlati feladat
 
 ## Konzultációk
 
@@ -57,7 +56,7 @@ a bonyolultabb típusokat fogjátok alapszinten megismerni.
 * [x] 2021-10-18 konzultáció gyakorlati feladat
 * [x] 2021-10-19 konzultáció részvétel/videó
 * [x] 2021-10-19 konzultáció gyakorlati feladat
-* [ ] 2021-10-21 konzultáció részvétel/videó
-* [ ] 2021-10-21 konzultáció gyakorlati feladat
+* [x] 2021-10-21 konzultáció részvétel/videó
+* [x] 2021-10-21 konzultáció gyakorlati feladat
 * [ ] 2021-10-22 konzultáció részvétel/videó
 * [ ] 2021-10-22 konzultáció gyakorlati feladat

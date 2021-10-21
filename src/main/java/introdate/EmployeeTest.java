@@ -4,9 +4,14 @@ import java.util.Scanner;
 
 public class EmployeeTest {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int year, month, day;
+
+        int year;
+        int month;
+        int day;
         String name;
+
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Kérem a nevet: ");
         name = scanner.nextLine();
         System.out.println("Születési év: ");
@@ -19,6 +24,7 @@ public class EmployeeTest {
         day = scanner.nextInt();
 
         Employee employee = new Employee(year, month, day, name);
+
         System.out.println("név: " + name);
         System.out.println("születési dátum: " + employee.getDateOfBirth());
         System.out.println("a munkavállalás kezdete: " + employee.getBeginEmployment());

@@ -7,7 +7,8 @@ public class Performance {
 
     private LocalDate date;
     private String artist;
-    private LocalTime startTime, endTime;
+    private LocalTime startTime;
+    private LocalTime endTime;
 
     public Performance(LocalDate date, String artist, LocalTime startTime, LocalTime endTime) {
         this.date = date;

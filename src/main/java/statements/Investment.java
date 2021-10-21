@@ -27,7 +27,7 @@ Kivett összeg 90 nap után: 0.0
  */
 public class Investment {
 
-    private final double cost = 0.003;
+    private static final double cost = 0.003;
     private int found;
     private int interstRate;
     private boolean active;

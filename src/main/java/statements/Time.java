@@ -1,7 +1,6 @@
 package statements;
 
 import java.util.Scanner;
-import java.util.function.Supplier;
 
 /*
 Készíts egy Time osztályt, amely egy adott időpontot reprezentál egy napon belül.
@@ -25,7 +24,10 @@ A második időpont 4:21:38 = 15698 másodperc
 Az első korábbi, mint a második: false
  */
 public class Time {
-    private int hour, minute, second;
+
+    private int hour;
+    private int minute;
+    private int second;
 
     public Time(int hour, int minute, int second) {
         this.hour = hour;
@@ -50,7 +52,11 @@ public class Time {
     }
 
     private static Time readTime() {
-        int hour, min, sec;
+
+        int hour;
+        int min;
+        int sec;
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("hour: ");
@@ -67,27 +73,12 @@ public class Time {
 
     public static void main(String[] args) {
 
-        Supplier<Time> ReadTime = () -> {
-            int hour, min, sec;
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.println("hour: ");
-            hour = scanner.nextInt();
-
-            System.out.println("minutes: ");
-            min = scanner.nextInt();
-
-            System.out.println("seconds: ");
-            sec = scanner.nextInt();
-
-            return new Time(hour, min, sec);
-        };
-
         Time t1 = readTime();
-        Time t2 = readTime();
-
         System.out.println("first: " + t1 + " = " + t1.getInMinutes() + " minutes");
+
+        Time t2 = readTime();
         System.out.println("second: " + t2 + " = " + t2.getInSeconds() + " seconds");
+
         System.out.println("first ealier than second : " + t1.earlierThan(t2));
     }
 }

@@ -1,4 +1,4 @@
-package math.math.random;
+package math.random;
 
 import java.util.Arrays;
 import java.util.List;

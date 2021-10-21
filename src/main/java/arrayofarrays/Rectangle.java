@@ -2,7 +2,7 @@ package arrayofarrays;
 
 public class Rectangle {
 
-    public static int[][] rectangularMatrix(int size) {
+    public int[][] rectangularMatrix(int size) {
         int[][] rm = new int[size][size];
 
         for (int i = 0; i < size; i++)
@@ -14,9 +14,11 @@ public class Rectangle {
 
     public static void main(String[] args) {
 
+        Rectangle rectangle = new Rectangle();
+
         final int size = 10;
 
-        int[][] rm = rectangularMatrix(size);
+        int[][] rm = rectangle.rectangularMatrix(size);
 
         for (int[] ints : rm) {
             for (int i : ints)

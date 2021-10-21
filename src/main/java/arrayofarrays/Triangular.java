@@ -2,7 +2,7 @@ package arrayofarrays;
 
 public class Triangular {
 
-    public static int[][] triangularMatrix(int size) {
+    public int[][] triangularMatrix(int size) {
 
         int[][] tm = new int[size][];
 
@@ -17,9 +17,11 @@ public class Triangular {
 
     public static void main(String[] args) {
 
+        Triangular triangular = new Triangular();
+
         final int size = 10;
 
-        int[][] tm = triangularMatrix(size);
+        int[][] tm = triangular.triangularMatrix(size);
 
         for (int[] ints : tm) {
             for (int i : ints)

@@ -4,7 +4,7 @@ public class DailyValues {
 
     public static final int MONTHS = 12;
 
-    public static int[][] getValues() {
+    public int[][] getValues() {
 
         int[][] dom = new int[MONTHS][];
 
@@ -25,7 +25,9 @@ public class DailyValues {
 
     public static void main(String[] args) {
 
-        int[][] dom = getValues();
+        DailyValues dailyValues = new DailyValues();
+
+        int[][] dom = dailyValues.getValues();
 
         for (int i = 0; i < MONTHS; i++) {
             for (int j = 0; j < dom[i].length; j++)

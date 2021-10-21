@@ -2,7 +2,7 @@ package arrayofarrays;
 
 public class ArrayOfArrays {
 
-    public static void printArrayOfArrays(int[][] a) {
+    public void printArrayOfArrays(int[][] a) {
         for (int[] ints : a) {
             for (int i : ints)
                 System.out.print(i + " ");
@@ -11,6 +11,7 @@ public class ArrayOfArrays {
     }
 
     public static void main(String[] args) {
+        ArrayOfArrays arrayOfArrays = new ArrayOfArrays();
 
         int[][] a = new int[4][3];
 
@@ -18,7 +19,7 @@ public class ArrayOfArrays {
             for (int j = 0; j < 3; j++)
                 a[i][j] = j;
 
-        printArrayOfArrays(a);
+        arrayOfArrays.printArrayOfArrays(a);
 
     }
 }

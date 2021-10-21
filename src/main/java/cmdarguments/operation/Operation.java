@@ -13,6 +13,7 @@ public class Operation {
                 System.out.println("Törlés");
             else
                 System.out.println("Ismeretlen művelet");
+
     }
 
 }

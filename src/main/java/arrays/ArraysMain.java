@@ -4,14 +4,14 @@ import java.util.Arrays;
 
 public class ArraysMain {
 
-    public static String numberOfDaysAsString() {
+    public String numberOfDaysAsString() {
 
         int[] numberOfDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         return Arrays.toString(numberOfDays);
 
     }
 
-    public static String multiplicationStringAsTables(int size) {
+    public String multiplicationStringAsTables(int size) {
 
         int[][] mt = new int[size][size];
         for (int i = 0; i < size; i++)
@@ -21,14 +21,14 @@ public class ArraysMain {
         return Arrays.deepToString(mt);
     }
 
-    public static boolean sameTempValues(double[] day, double[] anotherDay) {
+    public boolean sameTempValues(double[] day, double[] anotherDay) {
 
         return Arrays.equals(day, anotherDay);
 
     }
 
 
-    public static boolean sameTempValuesDayLight(double[] day, double[] anotherDay) {
+    public boolean sameTempValuesDayLight(double[] day, double[] anotherDay) {
 
         if (day.length == anotherDay.length)
             return Arrays.equals(day, anotherDay);
@@ -39,7 +39,7 @@ public class ArraysMain {
 
     }
 
-    public static boolean wonLottery(int[] sorsolt, int[] megjatszott) {
+    public boolean wonLottery(int[] sorsolt, int[] megjatszott) {
 
         int[] s = Arrays.copyOf(sorsolt, sorsolt.length);
         Arrays.sort(s);
@@ -52,8 +52,10 @@ public class ArraysMain {
 
     public static void main(String[] args) {
 
-        System.out.println(numberOfDaysAsString());
-        System.out.println(multiplicationStringAsTables(4));
+        ArraysMain arraysMain = new ArraysMain();
+
+        System.out.println(arraysMain.numberOfDaysAsString());
+        System.out.println(arraysMain.multiplicationStringAsTables(4));
 
     }
 }

@@ -7,7 +7,9 @@ A Note tartalmának megjelenítésekor használd a getNoteText() metódust!
 public class NoteMain {
 
     public static void main(String[] args) {
+
         Note note = new Note();
+
         note.setName("JDK 17");
         note.setTopic("new features");
         note.setText("Context-specific deserialization filters allow applications to configure context-specific and " +
@@ -30,6 +32,9 @@ public class NoteMain {
                 "A better approach is to configure per-stream filters such that they do not require the participation " +
                 "of every stream creator. The planned enhancement should help developers construct and apply appropriate " +
                 "filters for each deserialization context and use case.");
+
         System.out.println(note.getNoteText());
+
     }
+
 }

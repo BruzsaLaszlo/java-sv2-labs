@@ -7,6 +7,7 @@ Készíts egy Note osztályt, melyben a felhasználó rövid szöveges jegyzeté
  mely az osztály attribútumai alapján egyetlen szöveget ad vissza name: (topic) text formátumban!
  */
 public class Note {
+
     private String name;
     private String topic;
     private String text;
@@ -38,4 +39,5 @@ public class Note {
     public void setText(String text) {
         this.text = text;
     }
+
 }

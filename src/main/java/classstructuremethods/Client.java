@@ -8,6 +8,7 @@ Mind a három attribútumra legyen lekérdező és módosító metódus! Legyen 
 mely az ügyfél elköltözését implementálja, valójában beállítja a tárolt címet az új, paraméterként átadott címre.
  */
 public class Client {
+
     private String name;
     private int year;
     private String address;
@@ -39,4 +40,5 @@ public class Client {
     public void migrate(String address){
         this.address = address;
     }
+
 }

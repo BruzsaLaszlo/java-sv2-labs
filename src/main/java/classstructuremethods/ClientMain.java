@@ -7,13 +7,20 @@ Példányosítani kell egy objektumot a Client osztály alapján, majd be kell �
 címváltozás sikerességét úgy, hogy kiírod az eltárolt új címet!
  */
 public class ClientMain {
+
     public static void main(String[] args) {
+
         Client client = new Client();
+
         client.setName("Kiss Pista");
         client.setYear(1919);
         client.setAddress("9191, Kukutyin ");
+
         String newAddress = "5432, Ecsed";
         client.migrate(newAddress);
+
         System.out.println(newAddress);
+
     }
+
 }

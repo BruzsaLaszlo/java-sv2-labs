@@ -14,6 +14,7 @@ Készíts hozzá két metódust, mely a tárolt mennyiséget változtatja: a sto
  van-e a raktárban elegendő mennyiségű terméked.)
  */
 public class Store {
+
     private String product;
     private int stock = 0;
 
@@ -36,4 +37,5 @@ public class Store {
     public String getProduct() {
         return product;
     }
+
 }

@@ -1,7 +1,5 @@
 package classstructureconstructors;
 
-import jdk.jshell.spi.SPIResolutionException;
-
 /*
 Hozz létre egy Book osztályt, melynek három privát attribútuma van: szerző (author), cím (title) és
 regisztrációs szám (regNumber), mindhárom típusa String.

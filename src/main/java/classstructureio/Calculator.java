@@ -9,12 +9,19 @@ Készíts egy Calculator osztályt a classstructureio csomagba! A main metódusb
 public class Calculator {
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Kérek egy számot: ");
         int i = scanner.nextInt();
+        scanner.nextLine();
+
         System.out.println("Kérek még egyet: ");
         int j = scanner.nextInt();
+
         System.out.println(i + "+" + j);
         System.out.println(i+j);
+
     }
+
 }

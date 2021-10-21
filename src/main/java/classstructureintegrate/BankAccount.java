@@ -10,6 +10,7 @@ Tóth Kálmán (10073217-12000098-67341590): 103400 Ft
  */
 
 public class BankAccount {
+
     private String accountNumber;
     private String owner;
     private int balance;
@@ -31,4 +32,5 @@ public class BankAccount {
         this.owner = owner;
         this.balance = balance;
     }
+
 }

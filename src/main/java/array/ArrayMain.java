@@ -1,6 +1,7 @@
 package array;
 
 public class ArrayMain {
+
     public static void main(String[] args) {
 
         String[] weekdays = {"Hetfő", "Kedd", "Szerda", "Csötürtök", "Péntek", "Szombat", "Vasárnap"};
@@ -23,4 +24,5 @@ public class ArrayMain {
         System.out.println();
 
     }
+
 }

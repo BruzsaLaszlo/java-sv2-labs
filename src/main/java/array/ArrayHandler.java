@@ -2,21 +2,23 @@ package array;
 
 public class ArrayHandler {
 
-    public static void addIndexToNumber(int[] source) {
+    public void addIndexToNumber(int[] source) {
         for (int i = 0; i < source.length; i++)
             source[i] += i;
     }
 
-    public static void concatenateIndexToWord(String[] source) {
+    public void concatenateIndexToWord(String[] source) {
         for (int i = 0; i < source.length; i++)
             source[i] = i + ". " + source[i];
     }
 
     public static void main(String[] args) {
+        ArrayHandler arrayHandler = new ArrayHandler();
+
         int[] intArray = {1, 1, 1, 1, 10};
         String[] stringArray = {"S", "M", "L", "XL", "XXL"};
 
-        addIndexToNumber(intArray);
+        arrayHandler.addIndexToNumber(intArray);
 
         for (int i : intArray)
             System.out.println(i);
@@ -28,7 +30,7 @@ public class ArrayHandler {
                 System.out.print(intArray[i] + ", ");
 
 
-        concatenateIndexToWord(stringArray);
+        arrayHandler.concatenateIndexToWord(stringArray);
 
         for (String s : stringArray)
             System.out.println(s);

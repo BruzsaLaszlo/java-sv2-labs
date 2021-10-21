@@ -17,7 +17,9 @@ Az elsőtől a harmadik karakterig tartó részlete
  */
 
 public class StringTypeMain {
+
     public static void main(String[] args) {
+
         String prefix = "Hello ";
         String name = "John Doe";
         String message = prefix + name;
@@ -27,15 +29,19 @@ public class StringTypeMain {
         System.out.println(message);
         System.out.println(b);
         System.out.println(c);
+
         String s1 = "";
         String s2 = "";
         int lengthS1plusS2 = (s1 + s2).length();
         System.out.println(lengthS1plusS2);
+
         String abcde = "Abcde";
         System.out.println(abcde);
         int lengthAbcde = abcde.length();
         System.out.println(lengthAbcde);
         System.out.println(abcde.charAt(0) + "," + abcde.charAt(2));
         System.out.println(abcde.substring(0, 3));
+
     }
+
 }

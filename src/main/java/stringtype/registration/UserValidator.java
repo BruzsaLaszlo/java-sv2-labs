@@ -20,17 +20,18 @@ package stringtype.registration;
 
 public class UserValidator {
 
-    public static boolean isValidUserName(String name) {
+    public boolean isValidUserName(String name) {
         return name.length() > 0;
     }
 
-    public static boolean isValidPassword(String password1, String password2) {
+    public boolean isValidPassword(String password1, String password2) {
         return password1.length() >= 8 && password1.equals(password2);
     }
 
-    public static boolean isValidEmail(String email) {
+    public boolean isValidEmail(String email) {
         int at = email.indexOf('@');
         int dot = email.indexOf('.');
         return at > 0 && dot < email.length() - 1 && at + 1 < dot;
     }
+
 }

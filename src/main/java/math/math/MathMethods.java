@@ -5,7 +5,7 @@ public class MathMethods {
     public static void main(String[] args) {
 
         String mindenEgybe =
-                        Math.min(1, 100) + "\n" +
+                        Math.min(0, 100) + "\n" +
                         Math.max(0, 100) + "\n" +
                         Math.PI + "\n" +
                         Math.round(Math.PI) + "\n" +

@@ -2,7 +2,7 @@ package looptypes;
 
 public class Sum {
 
-    public static String printSums(int[] numbers) {
+    public String printSums(int[] numbers) {
 
         String sums = "";
         for (int i = 0; i < numbers.length - 1; i++)
@@ -14,8 +14,10 @@ public class Sum {
 
     public static void main(String[] args) {
 
+        Sum sum = new Sum();
+
         int[] nums = {1, 3, 5, 6, 1, 3, 4};
-        System.out.println(printSums(nums));
+        System.out.println(sum.printSums(nums));
 
     }
 

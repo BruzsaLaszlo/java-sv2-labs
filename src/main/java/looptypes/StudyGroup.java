@@ -6,7 +6,7 @@ import java.util.List;
 
 public class StudyGroup {
 
-    public static void printStudyGroups(List<String> students) {
+    public void printStudyGroups(List<String> students) {
 
         List<String> ss = new ArrayList<>();
         List<String> sl = new ArrayList<>();
@@ -24,10 +24,12 @@ public class StudyGroup {
 
     public static void main(String[] args) {
 
+        StudyGroup studyGroup = new StudyGroup();
+
         List<String> students = Arrays.asList("Kiss Pista", "Kovács Zoltán", "Nagy Tibor",
                 "Teresa García Ramírez", "Juan Martínez Villanueva");
 
-        printStudyGroups(students);
+        studyGroup.printStudyGroups(students);
 
     }
 

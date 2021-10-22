@@ -7,6 +7,7 @@ public class Transaction {
     private int amount;
 
     public Transaction(String accountNumber, TransactionOperation transactionOperation, int amount) {
+
         this.accountNumber = accountNumber;
         this.transactionOperation = transactionOperation;
         this.amount = amount;

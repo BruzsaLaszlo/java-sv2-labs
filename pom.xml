@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>solutions/introjunit</module>
+        <module>solutions/junit5</module>
     </modules>
 
     <properties>

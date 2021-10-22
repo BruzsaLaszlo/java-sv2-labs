@@ -12,10 +12,10 @@ class HeightTest {
 
     @Test
     void testCountChildrenWithHeightGreaterThan() {
-        List<Integer> heights = Arrays.asList(123, 156, 147, 109, 168, 119);
-        Height height = new Height();
-        int expected = height.countChildrenWithHeightGreaterThan(heights, 120);
 
-        assertEquals(4, expected);
+        Height height = new Height();
+        List<Integer> heights = Arrays.asList(56,76,54,23,54,67,87,67,87);
+        assertEquals(2, height.countChildrenWithHeightGreaterThan(heights, 80));
+
     }
 }

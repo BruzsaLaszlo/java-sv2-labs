@@ -11,11 +11,10 @@ class SchoolTest {
 
     @Test
     void testGetNumberOfStudents() {
-        List<Integer> headcounts = Arrays.asList(31, 28, 29, 25, 32, 33, 26, 27);
-        School school = new School();
-        int expected = school.getNumberOfStudents(headcounts);
 
-        assertEquals(231, expected);
+        School school = new School();
+        List<Integer> headcounts = Arrays.asList(25, 25, 20, 20, 30, 25, 25, 25);
+        assertEquals(195, school.getNumberOfStudents(headcounts));
     }
 
 }

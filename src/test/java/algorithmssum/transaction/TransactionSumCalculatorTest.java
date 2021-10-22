@@ -1,4 +1,4 @@
-package algorithmssum.transactions;
+package algorithmssum.transaction;
 
 import org.junit.jupiter.api.Test;
 
@@ -23,6 +23,6 @@ class TransactionSumCalculatorTest {
                 new Transaction("1234-2345-1231", TransactionOperation.DEBIT, 100000)
         );
 
-        assertEquals(99801, calculator.sumAmountOfCreditEntries(transactions, TransactionOperation.CREDIT));
+        assertEquals(99801, calculator.sumAmountOfCreditEntries(transactions));
     }
 }

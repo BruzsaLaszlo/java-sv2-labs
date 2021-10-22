@@ -1,4 +1,4 @@
-package algorithmssum.transactions;
+package algorithmssum.transaction;
 
 import org.junit.jupiter.api.Test;
 

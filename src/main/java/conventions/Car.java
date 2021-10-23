@@ -9,6 +9,7 @@ public class Car {
     private String carType;
     private String engineType;
     private int doors;
+    private int persons;
 
     public int getPersons() {
         return persons;
@@ -21,7 +22,6 @@ public class Car {
         this.persons = persons;
     }
 
-    private int persons;
 
     public String getCarType() {
         return carType;
@@ -34,7 +34,6 @@ public class Car {
     public int getDoors() {
         return doors;
     }
-
 
     public void setEngineType(String engineType) {
         this.engineType = engineType;

@@ -9,7 +9,8 @@ public class Prime {
         else if (number == 2)
             return true;
 
-        for (int i = 3; i < Math.sqrt(number); i++)
+        int sqrt = (int)Math.sqrt(number);
+        for (int i = 3; i < sqrt; i++)
             if (number % i == 0)
                 return false;
 

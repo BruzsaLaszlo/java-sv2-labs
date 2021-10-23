@@ -11,7 +11,7 @@ class PalindromeTest {
 
         Palindrome palindrome = new Palindrome();
         assertEquals(false, palindrome.isPalindrome("Aibohphobia"));
-        assertEquals(false, palindrome.isPalindrome("AibOhphobia"));
+        assertEquals(false, palindrome.isPalindrome("aibohPphobia"));
         assertEquals(true, palindrome.isPalindrome("aibohphobia"));
 
     }

@@ -15,8 +15,8 @@ a típusokról, az operátorokról, valamint a szöveges típusról.
 * [x] Bevezetés a metódusok használatába gyakorlati feladat
 * [x] [Referenciák videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709845-referenciak)
 * [x] Referenciák gyakorlati feladat
-* [ ] [Kompozíció videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/28188876-kompozicio)
-* [ ] Kompozíció gyakorlati feladat
+* [x] [Kompozíció videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/28188876-kompozicio)
+* [x] Kompozíció gyakorlati feladat
 * [ ] [Kompozíció listával videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/28188892-kompozicio-listaval)
 * [ ] Kompozíció listával gyakorlati feladat
 

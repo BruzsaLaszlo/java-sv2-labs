@@ -42,8 +42,8 @@ a típusokról, az operátorokról, valamint a szöveges típusról.
 
 ## Részletesen a szöveges típusról
 
-* [ ] [String alapok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10710528-string-alapok)
-* [ ] String alapok gyakorlati feladat
+* [x] [String alapok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10710528-string-alapok)
+* [x] String alapok gyakorlati feladat
 * [ ] [Konkatenáció videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10710386-konkatenacio)
 * [ ] Konkatenáció gyakorlati feladat
 * [ ] [Főbb String metódusok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10710533-fobb-string-metodusok)

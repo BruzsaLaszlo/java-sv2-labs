@@ -37,8 +37,8 @@ a típusokról, az operátorokról, valamint a szöveges típusról.
 * [x] Egész és lebegőpontos számok gyakorlati feladat
 * [x] [Típuskonverzió videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709762-tipuskonverzio)
 * [x] Típuskonverzió gyakorlati feladat
-* [ ] [Konverziók videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/27993726-konverziok)
-* [ ] Konverziók gyakorlati feladat
+* [x] [Konverziók videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/27993726-konverziok)
+* [x] Konverziók gyakorlati feladat
 
 ## Részletesen a szöveges típusról
 

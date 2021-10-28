@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class UrlManager {
 
-    private String protocol;
-    private Integer port;
-    private String host;
-    private String path;
-    private String query;
+    private final String protocol;
+    private final Integer port;
+    private final String host;
+    private final String path;
+    private final String query;
     private Map<String, String> querys;
 
     public static void main(String[] args) {

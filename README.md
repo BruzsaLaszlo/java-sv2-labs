@@ -1,1 +1,2 @@
-# Java Backend tanfolyam videós feladatai
+# Java Backend tanfolyam 
+#          videós és project feladatai

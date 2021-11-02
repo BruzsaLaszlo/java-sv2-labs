@@ -35,6 +35,7 @@ public class Cinema {
                         "Film címe: %s\n" +
                         "Lefoglalt helyek: %s\n" +
                         "Jó szórakozást!", name, title, sb);
+
     }
 
 }

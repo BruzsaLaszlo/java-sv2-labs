@@ -21,11 +21,13 @@ public class Message {
     }
 
     private static char[] codedMessageToCharArray(List<String> codedMessage) {
+
         char[] c = new char[codedMessage.size()];
         int i = 0;
         for(String s: codedMessage)
             c[i++] = (char)Integer.parseInt(s);
         return c;
+
     }
 
 }

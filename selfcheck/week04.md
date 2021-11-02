@@ -31,4 +31,4 @@ fogtok tanulni a vezérlési szerkezetekről.
 * [ ] 2021-11-04 konzultáció részvétel/videó
 * [ ] 2021-11-04 konzultáció gyakorlati feladat
 * [ ] 2021-11-05 konzultáció részvétel/videó
-* [ ] 2021-11-05 konzultáció gyakorlati feladat
+* [ ] 2021-11-05 konzultáció gyakorlati feladat 

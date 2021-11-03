@@ -10,7 +10,7 @@ public class Neptun {
 
     public static void main(String[] args) {
 
-        String path = "./src/main/java/introexceptioncheckedtrace/neptun.csv";
+        String path = "./src/main/resources/neptun.csv";
         List<String> codes = new ArrayList<>();
         try {
             for (String line : new Neptun().readFile(path))

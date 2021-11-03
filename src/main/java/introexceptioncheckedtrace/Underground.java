@@ -7,7 +7,7 @@ public class Underground {
     public static void main(String[] args) {
 
         Operation operation = new Operation();
-        String path = "./src/main/java/introexceptioncheckedtrace/underground.txt";
+        String path = "./src/main/resources/underground.txt";
 
         try {
             System.out.println(operation.getDailySchedule(operation.readFile(path)));

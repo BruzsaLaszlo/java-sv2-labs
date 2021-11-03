@@ -9,7 +9,7 @@ public class Holiday {
 
     public static void main(String[] args) {
 
-        String path = "./src/main/java/introexceptionreadfile/holiday.txt";
+        String path = "./src/main/resources/holiday.txt";
         try {
             List<String> list =  Files.readAllLines(Path.of(path));
             System.out.println(list);

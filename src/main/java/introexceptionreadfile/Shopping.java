@@ -9,7 +9,7 @@ public class Shopping {
 
     public static void main(String[] args) {
 
-        String path = "./src/main/java/introexceptionreadfile/shoppinglist.txt";
+        String path = "./src/main/resources/shoppinglist.txt";
         try {
             List<String> list =  Files.readAllLines(Path.of(path));
             System.out.println(list);

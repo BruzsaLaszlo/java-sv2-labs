@@ -9,8 +9,8 @@ public class Palindrome {
                 return true;
             else
                 return isPalindrome(word.substring(1, word.length() - 1));
-        else
-            return false;
+
+        return false;
 
     }
 }

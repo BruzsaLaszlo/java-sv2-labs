@@ -1,4 +1,4 @@
-package arrays.arraylist;
+package arraylist;
 
 import java.util.ArrayList;
 import java.util.List;

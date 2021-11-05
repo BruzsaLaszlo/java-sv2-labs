@@ -9,7 +9,7 @@ public class ForbiddenSenvens {
         System.out.print("Kérek egy számot: ");
         int num = new Scanner(System.in).nextInt();
 
-        for (int i = num < 1 ? 1 : num; i < num + 18; i++) {
+        for (int i = Math.max(num, 1); i < num + 18; i++) {
 
             if (i % 7 == 0) {
                 System.out.println('X');

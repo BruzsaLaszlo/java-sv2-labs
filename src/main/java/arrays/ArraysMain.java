@@ -33,9 +33,9 @@ public class ArraysMain {
         if (day.length == anotherDay.length)
             return Arrays.equals(day, anotherDay);
         if (day.length < anotherDay.length)
-            return Arrays.equals(day, Arrays.copyOf(anotherDay, 23));
+            return Arrays.equals(day, Arrays.copyOfRange(anotherDay, 0,23));
         else
-            return Arrays.equals(Arrays.copyOf(day, 23), anotherDay);
+            return Arrays.equals(Arrays.copyOfRange(day, 0,23), anotherDay);
 
     }
 

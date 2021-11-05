@@ -3,6 +3,7 @@ package arrayofarrays;
 public class Rectangle {
 
     public int[][] rectangularMatrix(int size) {
+
         int[][] rm = new int[size][size];
 
         for (int i = 0; i < size; i++)
@@ -10,6 +11,7 @@ public class Rectangle {
                 rm[i][j] = i;
 
         return rm;
+
     }
 
     public static void main(String[] args) {

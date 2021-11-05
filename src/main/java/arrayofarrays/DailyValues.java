@@ -30,9 +30,10 @@ public class DailyValues {
         int[][] dom = dailyValues.getValues();
 
         for (int i = 0; i < MONTHS; i++) {
+            System.out.print(dom[i].length + " : ");
             for (int j = 0; j < dom[i].length; j++)
                 System.out.print(dom[i][j]);
-            System.out.println(" : " + dom[i].length);
+            System.out.println();
         }
 
     }

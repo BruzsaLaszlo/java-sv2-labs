@@ -3,14 +3,17 @@ package arrayofarrays;
 public class ArrayOfArrays {
 
     public void printArrayOfArrays(int[][] a) {
+
         for (int[] ints : a) {
             for (int i : ints)
                 System.out.print(i + " ");
             System.out.println();
         }
+
     }
 
     public static void main(String[] args) {
+
         ArrayOfArrays arrayOfArrays = new ArrayOfArrays();
 
         int[][] a = new int[4][3];

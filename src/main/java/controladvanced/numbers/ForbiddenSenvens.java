@@ -6,6 +6,7 @@ public class ForbiddenSenvens {
 
     public static void main(String[] args) {
 
+        System.out.print("Kérek egy számot: ");
         int num = new Scanner(System.in).nextInt();
 
         for (int i = num < 1 ? 1 : num; i < num + 18; i++) {

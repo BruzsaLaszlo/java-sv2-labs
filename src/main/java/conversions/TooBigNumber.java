@@ -3,7 +3,7 @@ package conversions;
 public class TooBigNumber {
 
     public long getRightResult(int number) {
-        return 2_147_483_647L + number;
+        return (long) Integer.MAX_VALUE + number;
     }
 
 

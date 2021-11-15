@@ -19,6 +19,7 @@ public class Car {
         this.brand = brand;
         this.typeName = typeName;
         this.yearOfManufacture = yearOfManufacture;
+
     }
 
 }

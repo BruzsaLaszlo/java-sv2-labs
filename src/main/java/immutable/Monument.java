@@ -18,6 +18,7 @@ public class Monument {
         this.address = address;
         this.registrationDate = registrationDate;
         this.registrationNumber = registrationNumber;
+
     }
 
     private boolean isEmpty(String string) {

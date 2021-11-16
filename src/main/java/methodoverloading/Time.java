@@ -8,6 +8,12 @@ public class Time {
 
     private int seconds;
 
+    public Time(int hours, int minutes, int seconds) {
+        this.hours = hours;
+        this.minutes = minutes;
+        this.seconds = seconds;
+    }
+
     public boolean isEqual(Time time) {
         return hours == time.hours
                 && minutes == time.minutes

@@ -5,21 +5,32 @@ import java.time.LocalDate;
 public class Car {
 
     private final String brand;
-    private final String typeName;
-    private final int yearOfManufacture;
+    private final String model;
+    private final int yearOfProduction;
 
-    public Car(String brand, String typeName, int yearOfManufacture) {
+    public Car(String brand, String model, int yearOfProduction) {
 
         if (brand == null || brand.isBlank())
-            throw new IllegalArgumentException("A brand nem lehet null vagy üres!");
+            throw new IllegalArgumentException("Brand name cannot be empty!");
 
-        if (yearOfManufacture > LocalDate.now().getYear())
-            throw new IllegalArgumentException("Hibás az év!");
+        if (yearOfProduction > LocalDate.now().getYear())
+            throw new IllegalArgumentException("Year of production cannot be in the future!");
 
         this.brand = brand;
-        this.typeName = typeName;
-        this.yearOfManufacture = yearOfManufacture;
+        this.model = model;
+        this.yearOfProduction = yearOfProduction;
 
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYearOfProduction() {
+        return yearOfProduction;
+    }
 }

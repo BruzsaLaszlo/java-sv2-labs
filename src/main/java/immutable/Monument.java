@@ -6,23 +6,38 @@ public class Monument {
 
     private final String name;
     private final String address;
-    private final LocalDate registrationDate;
-    private final String registrationNumber;
+    private final LocalDate dateOfRegistry;
+    private final String registryNumber;
 
-    public Monument(String name, String address, LocalDate registrationDate, String registrationNumber) {
+    public Monument(String name, String address, LocalDate dateOfRegistry, String registryNumber) {
 
-        if (isEmpty(name) || isEmpty(address) || isEmpty(registrationNumber))
-            throw new IllegalArgumentException("Parameters can not be null!");
+        if (isEmpty(name) || isEmpty(address) || isEmpty(registryNumber))
+            throw new IllegalArgumentException("Name, address or registry number cannot be empty!");
 
         this.name = name;
         this.address = address;
-        this.registrationDate = registrationDate;
-        this.registrationNumber = registrationNumber;
+        this.dateOfRegistry = dateOfRegistry;
+        this.registryNumber = registryNumber;
 
     }
 
     private boolean isEmpty(String string) {
-        return name == null || name.isBlank();
+        return string == null || string.isBlank();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public LocalDate getDateOfRegistry() {
+        return dateOfRegistry;
+    }
+
+    public String getRegistryNumber() {
+        return registryNumber;
+    }
 }

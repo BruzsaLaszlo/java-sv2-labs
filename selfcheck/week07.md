@@ -45,8 +45,8 @@ Ezen a héten nagyrészt ismétlés következik, néhány újabb ismerettel: a p
 
 * [x] [Default és paraméter nélküli konstruktor videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525983-default-es-parameter-nelkuli-konstruktor)
 * [x] Default és paraméter nélküli konstruktor gyakorlati feladat
-* [ ] [Konstruktor túlterhelés videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525990-konstruktor-tulterheles)
-* [ ] Konstruktor túlterhelés gyakorlati feladat
+* [x] [Konstruktor túlterhelés videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525990-konstruktor-tulterheles)
+* [x] Konstruktor túlterhelés gyakorlati feladat
 * [ ] [Inicializátorok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525995-inicializatorok)
 * [ ] Inicializátorok gyakorlati feladat
 

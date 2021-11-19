@@ -2,28 +2,59 @@ package constructoroverloading.bus;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+
 class BusTimeTableTest {
 
+    private static final List<SimpleTime> TIME_TABLE = Arrays.asList(
+            new SimpleTime(9, 15),
+            new SimpleTime(12, 45),
+            new SimpleTime(14, 15),
+            new SimpleTime(16, 15),
+            new SimpleTime(18, 15)
+    );
+
     @Test
-    void getNextBus() {
+    void constructorTestList() {
+        //Given
+        BusTimeTable timetable = new BusTimeTable(TIME_TABLE);
+        // When
+        assertEquals(5, timetable.getTimeTable().size());
+        assertEquals(9, timetable.getTimeTable().get(0).getHours());
+        assertEquals(15, timetable.getTimeTable().get(4).getMinutes());
+    }
 
-        var list = List.of(
-                new SimpleTime(10, 10),
-                new SimpleTime(12, 20),
-                new SimpleTime(13, 30),
-                new SimpleTime(14, 40)
-        );
+    @Test
+    void constructorTestHours() {
+        //Given
+        BusTimeTable timetable = new BusTimeTable(14, 16, 30);
+        // When
+        assertEquals(3, timetable.getTimeTable().size());
+        assertEquals(14, timetable.getTimeTable().get(0).getHours());
+        assertEquals(30, timetable.getTimeTable().get(0).getMinutes());
+        assertEquals(16, timetable.getTimeTable().get(2).getHours());
+    }
 
-        BusTimeTable btt = new BusTimeTable(list);
+    @Test
+    void testNextBus() {
+        //Given
+        BusTimeTable timetable = new BusTimeTable(TIME_TABLE);
+        // When
+        assertEquals("14:15", timetable.nextBus(new SimpleTime(13, 15)).toString());
+    }
 
-        assertEquals("10:10", btt.getNextBus(new SimpleTime(9, 0)).toString());
-        assertEquals("14:40", btt.getNextBus(new SimpleTime(14, 0)).toString());
-        assertThrows(IllegalStateException.class, () -> btt.getNextBus(new SimpleTime(15, 0)));
+    @Test
+    void nextBusShouldThrowExceptionIfNone() throws IllegalStateException {
+        BusTimeTable timetable = new BusTimeTable(TIME_TABLE);
 
+        Exception ex = assertThrows(
+                IllegalStateException.class,
+                () -> timetable.nextBus(new SimpleTime(18, 16)));
+        assertEquals("No more buses today!", ex.getMessage());
     }
 }

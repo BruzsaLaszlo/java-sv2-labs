@@ -21,7 +21,7 @@ public class SimpleTime {
         return time.hours * 60 + minutes;
     }
 
-    public int getDifference(SimpleTime time) {
+    public int difference(SimpleTime time) {
         return timeInMinutes(this) - time.timeInMinutes(time);
     }
 

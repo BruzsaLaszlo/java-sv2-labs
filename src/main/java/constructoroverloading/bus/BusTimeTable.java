@@ -28,15 +28,15 @@ public class BusTimeTable {
         return List.copyOf(departureTime);
     }
 
-    public SimpleTime getNextBus(SimpleTime actual) {
+    public SimpleTime nextBus(SimpleTime actual) {
 
 
         for (SimpleTime st : departureTime) {
-            if (st.getDifference(actual) >= 0) {
+            if (st.difference(actual) >= 0) {
                 return st;
             }
         }
-        throw new IllegalStateException("no more bus");
+        throw new IllegalStateException("No more buses today!");
     }
 
 }

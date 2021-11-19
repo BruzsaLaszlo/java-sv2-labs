@@ -10,6 +10,7 @@ public class One {
         System.out.println(number);
         System.out.println(addOne(number));
         System.out.println(number);
+
     }
 
     public static int addOne(int number) {

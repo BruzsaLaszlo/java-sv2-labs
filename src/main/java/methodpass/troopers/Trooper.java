@@ -7,15 +7,19 @@ public class Trooper {
     private Position position;
 
     public Trooper(String name) {
+        if (name == null || name.isBlank())
+            throw new IllegalArgumentException("Name must not be empty.");
         this.name = name;
         position = new Position(0, 0);
     }
 
-    public void chagePosition(Position target) {
+    public void changePosition(Position target) {
+        if (target == null)
+            throw new IllegalArgumentException();
         this.position = target;
     }
 
-    public double disntaceFrom(Position target) {
+    public double distanceFrom(Position target) {
         return position.distanceFrom(target);
     }
 

@@ -2,24 +2,24 @@ package methodpass.troopers;
 
 public class Position {
 
-    private final int x;
+    private final double posX;
 
-    private final int y;
+    private final double posY;
 
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Position(double posX, double posY) {
+        this.posX = posX;
+        this.posY = posY;
     }
 
     public double distanceFrom(Position position) {
-        return Math.sqrt(Math.pow(x - position.x, 2) + Math.pow(y - position.y, 2));
+        return Math.sqrt(Math.pow(posX - position.posX, 2) + Math.pow(posY - position.posY, 2));
     }
 
-    public int getX() {
-        return x;
+    public double getPosX() {
+        return posX;
     }
 
-    public int getY() {
-        return y;
+    public double getPosY() {
+        return posY;
     }
 }

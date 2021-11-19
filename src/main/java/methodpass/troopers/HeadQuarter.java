@@ -29,16 +29,16 @@ public class HeadQuarter {
             throw new IllegalStateException("parameters is null");
 
         findClosestTrooper(target)
-                .chagePosition(target);
+                .changePosition(target);
     }
 
     private Trooper findClosestTrooper(Position target) {
         Trooper closest = troopers.get(0);
-        double distance = closest.disntaceFrom(target);
+        double distance = closest.distanceFrom(target);
         for (Trooper t : troopers) {
-            if (t.disntaceFrom(target) < distance) {
+            if (t.distanceFrom(target) < distance) {
                 closest = t;
-                distance = closest.disntaceFrom(target);
+                distance = closest.distanceFrom(target);
             }
         }
         return closest;
@@ -54,6 +54,6 @@ public class HeadQuarter {
     }
 
     private void moveTrooper(Trooper trooper, Position target) {
-        trooper.chagePosition(target);
+        trooper.changePosition(target);
     }
 }

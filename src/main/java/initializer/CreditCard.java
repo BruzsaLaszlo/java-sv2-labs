@@ -7,7 +7,7 @@ public class CreditCard {
 
     private long balance;
 
-    private static final List<Rate> rates;
+    private static List<Rate> rates;
 
     static {
         rates = new ArrayList<>();
@@ -19,20 +19,28 @@ public class CreditCard {
     }
 
     public CreditCard(long balance, Currency currency) {
-        this.balance = balance;
+        this(balance, currency, rates);
+    }
 
-    }
     public CreditCard(long balance) {
-        this(balance,Currency.HUF);
+        this(balance, Currency.HUF);
     }
+
+
+    public CreditCard(long balance, Currency currency, List<Rate> rates) {
+        CreditCard.rates = rates;
+        this.balance = (long) (balance * getRate(currency));
+    }
+
 
     public long getBalance() {
         return balance;
     }
 
     public boolean payment(long amount, Currency currency) {
-        if (balance > amount) {
-            balance -= amount * getRate(currency);
+        long forint = (long)(amount * getRate(currency));
+        if (balance >= forint) {
+            balance -= forint;
             return true;
         }
         return false;

@@ -21,9 +21,9 @@ public class Pendrives {
     public Pendrive getBest(List<Pendrive> pendrives) {
 
         Pendrive best = pendrives.get(0);
-        for (int i = 1; i < pendrives.size(); i++) {
-            if (best.comparePricePerCapacity(pendrives.get(i)) > 0) {
-                best = pendrives.get(0);
+        for (Pendrive p : pendrives) {
+            if (best.comparePricePerCapacity(p) > 0) {
+                best = p;
             }
         }
 

@@ -2,11 +2,16 @@ package methodstructure.bmi;
 
 public class BodyMass {
 
-    private int weigth;
+    private double weight;
     private double height;
 
+    public BodyMass(double weight, double height) {
+        this.weight = weight;
+        this.height = height;
+    }
+
     public double getBodyMassIndex() {
-        return weigth / (height * height);
+        return weight / (height * height);
     }
 
     public BmiCategory getBody() {
@@ -24,8 +29,8 @@ public class BodyMass {
         return this.getBodyMassIndex() < other.getBodyMassIndex();
     }
 
-    public int getWeigth() {
-        return weigth;
+    public double getWeight() {
+        return weight;
     }
 
     public double getHeight() {

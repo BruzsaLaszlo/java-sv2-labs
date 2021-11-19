@@ -6,6 +6,11 @@ public class Pendrive {
     private int capacity;
     private int price;
 
+    public Pendrive(String name, int capacity, int price) {
+        this.name = name;
+        this.capacity = capacity;
+        this.price = price;
+    }
 
     public void risePrice(int percent) {
         price += price * (percent / 100d);

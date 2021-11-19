@@ -10,8 +10,8 @@ public class ExamStats {
 
     public int getNumberOfTopGrades(int limitInPercent, int... results) {
 
-        if (results.length == 0)
-            throw new IllegalArgumentException("result invalid");
+        if (results == null || results.length == 0)
+            throw new IllegalArgumentException("Number of results must not be empty!");
 
         int limitInPoints = (int) (maxPoints * (limitInPercent / 100d));
 
@@ -28,7 +28,7 @@ public class ExamStats {
     public boolean hasAnyFailed(int limitInPercent, int... results) {
 
         if (results.length == 0)
-            throw new IllegalArgumentException("result invalid");
+            throw new IllegalArgumentException("Number of results must not be empty!");
 
         int limitInPoints = (int) (maxPoints * (limitInPercent / 100d));
 

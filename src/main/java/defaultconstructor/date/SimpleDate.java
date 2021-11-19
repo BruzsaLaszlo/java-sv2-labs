@@ -16,10 +16,10 @@ public class SimpleDate {
     private boolean isCorrect(int year, int month, int day) {
 
         if (year < 1900)
-            throw new IllegalArgumentException("invalid year!");
+            throw new IllegalArgumentException("invalid year: " + year);
 
         if (day != calculateMonthLength(year, month))
-            throw new IllegalArgumentException("invalid day!");
+            throw new IllegalArgumentException("invalid day: " + day);
 
         return true;
     }
@@ -46,7 +46,7 @@ public class SimpleDate {
                 else return 28;
 
             default:
-                throw new IllegalArgumentException("invalid month!");
+                throw new IllegalArgumentException("invalid month: " + month);
         }
     }
 

@@ -10,6 +10,11 @@ public class Student {
     public void addNotes(int note) {
         if (note > 5 || note < 1)
             throw new IllegalArgumentException("Note must be between 1 and 5!");
+        notes.add(note);
+    }
+
+    public List<Integer> getNotes() {
+        return List.copyOf(notes);
     }
 
 }

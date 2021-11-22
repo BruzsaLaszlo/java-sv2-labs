@@ -1,4 +1,4 @@
-package introinheritance.personemployeeboss;
+package inheritancemethods.personemployeeboss;
 
 public class Boss extends Employee {
 

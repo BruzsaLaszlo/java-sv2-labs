@@ -52,11 +52,11 @@ Ezen a héten nagyrészt ismétlés következik, néhány újabb ismerettel: a p
 
 ## Konzultációk
 
-* [ ] 2021-11-22 konzultáció részvétel/videó
-* [ ] 2021-11-22 konzultáció gyakorlati feladat
-* [ ] 2021-11-23 konzultáció részvétel/videó
-* [ ] 2021-11-23 konzultáció gyakorlati feladat
-* [ ] 2021-11-25 konzultáció részvétel/videó
-* [ ] 2021-11-25 konzultáció gyakorlati feladat
-* [ ] 2021-11-26 konzultáció részvétel/videó
-* [ ] 2021-11-26 konzultáció gyakorlati feladat
+* [x] 2021-11-22 konzultáció részvétel/videó
+* [x] 2021-11-22 konzultáció gyakorlati feladat
+* [x] 2021-11-23 konzultáció részvétel/videó
+* [x] 2021-11-23 konzultáció gyakorlati feladat
+* [x] 2021-11-25 konzultáció részvétel/videó
+* [x] 2021-11-25 konzultáció gyakorlati feladat
+* [x] 2021-11-26 konzultáció részvétel/videó
+* [x] 2021-11-26 konzultáció gyakorlati feladat

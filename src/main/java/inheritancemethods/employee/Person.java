@@ -1,8 +1,8 @@
-package inheritancemethods.personemployeeboss;
+package inheritancemethods.employee;
 
 public class Person {
 
-    private String name;
+    private final String name;
     private String address;
 
     public Person(String name, String address) {

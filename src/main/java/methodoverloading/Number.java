@@ -18,4 +18,5 @@ public enum Number {
     public int getValue() {
         return value;
     }
+
 }

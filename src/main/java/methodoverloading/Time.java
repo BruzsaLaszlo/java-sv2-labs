@@ -42,4 +42,15 @@ public class Time {
         return hours * 3600 + minutes * 60 + seconds;
     }
 
+    public int getHours() {
+        return hours;
+    }
+
+    public int getMinutes() {
+        return minutes;
+    }
+
+    public int getSeconds() {
+        return seconds;
+    }
 }

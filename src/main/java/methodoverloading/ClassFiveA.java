@@ -1,22 +1,22 @@
 package methodoverloading;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ClassFiveA {
 
-    private List<String> names = new ArrayList<>();
+    private final List<String> names = List.of(
+            "Pisti","Zoli","Ildi","Kiss József","Ica","Jani","Geri","Csabi","Anna","Ida","Dorka");
 
-    public String getTodayReferringStedent(int number) {
+    public String getTodayReferringStudent(int number) {
         return names.get(number);
     }
 
-    public String getTodayReferringStedent(Number number) {
+    public String getTodayReferringStudent(Number number) {
         return names.get(number.getValue());
     }
 
-    public String getTodayReferringStedent(String numberName) {
-        return names.get(Number.valueOf(numberName).getValue());
+    public String getTodayReferringStudent(String numberName) {
+        return names.get(Number.valueOf(numberName.toUpperCase()).getValue());
     }
 
 }

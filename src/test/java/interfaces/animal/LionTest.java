@@ -1,0 +1,21 @@
+package interfaces.animal;
+
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class LionTest {
+    @Test
+    void getNumberofLegs() {
+        Lion lion = new Lion();
+        assertEquals(4, lion.getNumberOfLegs());
+    }
+
+    @Test
+    void getName() {
+        Lion lion = new Lion();
+        assertEquals("Lion", lion.getName());
+    }
+
+}

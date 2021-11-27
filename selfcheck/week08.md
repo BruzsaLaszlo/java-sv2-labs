@@ -15,13 +15,13 @@ fogtok megismerkedni.
 * [x] Object ősosztály gyakorlati feladat
 * [x] [Attribútumok öröklődése videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29592433-attributumok-oroklodese)
 * [x] Attribútumok öröklődése gyakorlati feladat
-* [ ] [Metódusok öröklődése videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29592443-metodusok-oroklodese)
-* [ ] Metódusok öröklődése gyakorlati feladat
+* [x] [Metódusok öröklődése videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29592443-metodusok-oroklodese)
+* [x] Metódusok öröklődése gyakorlati feladat
   
 ## Absztrakt osztályok és interfészek
 
-* [ ] [Absztrakt osztályok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29592461-absztrakt-osztalyok)
-* [ ] Absztrakt osztályok gyakorlati feladat
+* [x] [Absztrakt osztályok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29592461-absztrakt-osztalyok)
+* [x] Absztrakt osztályok gyakorlati feladat
 
 ## Konzultációk
 

@@ -7,11 +7,11 @@ fogtok megismerkedni.
 
 * [x] [Interfészek videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29593820-interfeszek)
 * [x] Interfészek gyakorlati feladat
-* [ ] [Interfészekkel kapcsolatos szabályok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29593828-interfeszekkel-kapcsolatos-szabalyok)
+* [x] [Interfészekkel kapcsolatos szabályok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29593828-interfeszekkel-kapcsolatos-szabalyok)
 * [ ] Interfészekkel kapcsolatos szabályok gyakorlati feladat
-* [ ] [Dependency inversion videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29593839-dependency-inversion)
+* [x] [Dependency inversion videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29593839-dependency-inversion)
 * [ ] Dependency inversion gyakorlati feladat
-* [ ] [Default interfész metódusok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29593845-default-interfesz-metodusok)
+* [x] [Default interfész metódusok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29593845-default-interfesz-metodusok)
 * [ ] Default interfész metódusok gyakorlati feladat
 * [ ] [Statikus interfész metódusok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29593855-statikus-interfesz-metodusok)
 * [ ] Statikus interfész metódusok gyakorlati feladat

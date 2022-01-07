@@ -31,18 +31,16 @@ public class Catalog {
     }
 
     public void deleteItemByRegistrationNumber(String registrationNumber) {
-        CatalogItem found = catalogItems.stream()
+        catalogItems.stream()
                 .filter(catalogItem -> catalogItem.getRegistrationNumber().equals(registrationNumber))
                 .findFirst()
-                .orElseThrow();
-        catalogItems.remove(found);
+                .ifPresent(catalogItem -> catalogItems.remove(catalogItem));
     }
 
     public List<CatalogItem> findByCriteria(SearchCriteria criteria) {
         return catalogItems.stream()
                 .filter(catalogItem ->
-                        catalogItem.getContributors().stream().anyMatch(s -> s.equals(criteria.getContributor()))
-                                || catalogItem.getTitles().stream().anyMatch(s -> s.equals(criteria.getTitle())))
+                        catalogItem.getContributors().contains(criteria.getContributor()) || catalogItem.getTitles().contains(criteria.getTitle()))
                 .toList();
     }
 

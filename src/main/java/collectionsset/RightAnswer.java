@@ -2,11 +2,11 @@ package collectionsset;
 
 import java.util.Objects;
 
-public class RigthAnswer {
+public class RightAnswer {
 
     private String name;
 
-    public RigthAnswer(String name) {
+    public RightAnswer(String name) {
         this.name = name;
     }
 
@@ -18,7 +18,7 @@ public class RigthAnswer {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RigthAnswer that = (RigthAnswer) o;
+        RightAnswer that = (RightAnswer) o;
         return Objects.equals(name, that.name);
     }
 

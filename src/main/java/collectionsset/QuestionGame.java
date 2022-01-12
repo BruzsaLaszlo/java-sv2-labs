@@ -7,23 +7,23 @@ import java.util.Set;
 
 public class QuestionGame {
 
-    private List<RigthAnswer> rigthAnswers;
+    private List<RightAnswer> rightAnswers;
     private static final int WINNERS = 5;
     Random random = new Random();
 
-    public QuestionGame(List<RigthAnswer> rigthAnswers) {
-        this.rigthAnswers = rigthAnswers;
+    public QuestionGame(List<RightAnswer> rightAnswers) {
+        this.rightAnswers = rightAnswers;
     }
 
     public Set<String> drawWinners() {
         var result = new HashSet<String>();
         while (result.size() != WINNERS) {
-            if (rigthAnswers.isEmpty()) {
-                throw new IllegalArgumentException("nincs elég játékos");
+            if (rightAnswers.isEmpty()) {
+                throw new IllegalArgumentException("Not enough right answers!");
             }
-            RigthAnswer drawn = rigthAnswers.get(random.nextInt(rigthAnswers.size()));
+            RightAnswer drawn = rightAnswers.get(random.nextInt(rightAnswers.size()));
             result.add(drawn.getName());
-            rigthAnswers.remove(drawn);
+            rightAnswers.remove(drawn);
         }
         return result;
     }

@@ -24,7 +24,7 @@ class GentlemenTest {
 
         String welcome = gentlemen.sayHello(null);
 
-        assertEquals("Hello John Doe", welcome);
+        assertEquals("Hello Anonymus", welcome);
 
     }
 

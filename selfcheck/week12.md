@@ -31,10 +31,10 @@ Ezen a héten a kollekciókkal fogtok részletesebben megismerkedni.
 
 * [x] [Bejárás videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769621-bejaras)
 * [x] Bejárás gyakorlati feladat
-* [ ] [A Comparator és Comparable interfészek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769622-a-comparator-es-comparable-interfeszek)
-* [ ] A Comparator és Comparable interfészek gyakorlati feladat
-* [ ] [Keresés videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769623-kereses)
-* [ ] Keresés gyakorlati feladat
+* [x] [A Comparator és Comparable interfészek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769622-a-comparator-es-comparable-interfeszek)
+* [x] A Comparator és Comparable interfészek gyakorlati feladat
+* [x] [Keresés videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769623-kereses)
+* [x] Keresés gyakorlati feladat
 * [ ] [Rendezés videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769624-rendezes)
 * [ ] Rendezés gyakorlati feladat
 * [ ] [Collections osztály (keresésen, rendezésen felüli metódusok) videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769625-collections-osztaly-keresesen-rendezesen-feluli-metodusok)

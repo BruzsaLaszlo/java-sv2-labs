@@ -13,7 +13,8 @@ public class FoodStore {
     }
 
     public void sellFirst(Food food) {
-        if (food.getExpiration().equals(LocalDate.now())) {
+        if (food.getExpirationDate().equals(LocalDate.now())) {
+            foods.add(foods.get(0));
             foods.set(0, food);
         }
     }

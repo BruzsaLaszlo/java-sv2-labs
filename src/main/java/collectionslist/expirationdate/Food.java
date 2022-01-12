@@ -16,7 +16,7 @@ public class Food {
         return name;
     }
 
-    public LocalDate getExpiration() {
+    public LocalDate getExpirationDate() {
         return expiration;
     }
 }

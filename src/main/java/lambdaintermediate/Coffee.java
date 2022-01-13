@@ -1,20 +1,22 @@
 package lambdaintermediate;
 
+import java.math.BigDecimal;
+
 public class Coffee {
 
-    private CoffeType type;
-    private double price;
+    private CoffeeType type;
+    private BigDecimal price;
 
-    public Coffee(CoffeType type, double price) {
+    public Coffee(CoffeeType type, BigDecimal price) {
         this.type = type;
         this.price = price;
     }
 
-    public CoffeType getType() {
+    public CoffeeType getType() {
         return type;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 }

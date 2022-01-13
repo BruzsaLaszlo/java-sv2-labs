@@ -1,6 +1,6 @@
 package lambdaintermediate;
 
-public enum CoffeType {
+public enum CoffeeType {
 
     ESPRESSO, MACHIATTO, RISTRETTO, MOCHA, LATTE, CAPPUCCINO, AMERICANO
 

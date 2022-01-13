@@ -1,28 +1,29 @@
 package lambdaintermediate;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class CoffeeOrder {
 
-    private List<Coffee> coffees;
-    private LocalDateTime time;
+    private List<Coffee> coffeeList;
+    private LocalDateTime dateTime;
 
-    public CoffeeOrder(List<Coffee> coffees, LocalDateTime time) {
-        this.coffees = coffees;
-        this.time = time;
+    public CoffeeOrder(List<Coffee> coffeeList, LocalDateTime dateTime) {
+        this.coffeeList = coffeeList;
+        this.dateTime = dateTime;
     }
 
-    public List<Coffee> getCoffes() {
-        return coffees;
+    public List<Coffee> getCoffeeList() {
+        return Collections.unmodifiableList(coffeeList);
     }
 
     public Stream<Coffee> getCoffesStream() {
-        return coffees.stream();
+        return coffeeList.stream();
     }
 
-    public LocalDateTime getTime() {
-        return time;
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 }

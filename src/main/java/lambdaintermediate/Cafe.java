@@ -1,10 +1,12 @@
 package lambdaintermediate;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Cafe {
 
@@ -18,26 +20,26 @@ public class Cafe {
         orders.add(order);
     }
 
-    public double getTotalIncome() {
-        double sum = orders.stream()
+    public BigDecimal getTotalIncome() {
+        return orders.stream()
                 .flatMap(CoffeeOrder::getCoffesStream)
-                .mapToDouble(Coffee::getPrice)
-                .reduce(Double::sum)
-                .orElseThrow();
-        return round2(sum);
+                .map(Coffee::getPrice)
+                .reduce(BigDecimal::add)
+                .orElseThrow()
+                .setScale(2, RoundingMode.HALF_UP);
     }
 
-    public double getTotalIncome(LocalDate date) {
-        double sum = orders.stream()
-                .filter(order -> order.getTime().getYear() == date.getYear() && order.getTime().getDayOfYear() == date.getDayOfYear())
+    public BigDecimal getTotalIncome(LocalDate date) {
+        return orders.stream()
+                .filter(order -> order.getDateTime().getYear() == date.getYear() && order.getDateTime().getDayOfYear() == date.getDayOfYear())
                 .flatMap(CoffeeOrder::getCoffesStream)
-                .mapToDouble(Coffee::getPrice)
-                .reduce(Double::sum)
-                .orElseThrow();
-        return round2(sum);
+                .map(Coffee::getPrice)
+                .reduce(BigDecimal::add)
+                .orElseThrow()
+                .setScale(2, RoundingMode.HALF_UP);
     }
 
-    public long getNumberOfCoffee(CoffeType type) {
+    public long getNumberOfCoffee(CoffeeType type) {
         return orders.stream()
                 .flatMap(CoffeeOrder::getCoffesStream)
                 .filter(coffee -> coffee.getType() == type)
@@ -46,20 +48,16 @@ public class Cafe {
 
     public List<CoffeeOrder> getOrdersAfter(LocalDateTime from) {
         return orders.stream()
-                .filter(order -> order.getTime().isAfter(from))
+                .filter(order -> order.getDateTime().isAfter(from))
                 .toList();
     }
 
-    public List<Coffee> getFirstFiveOrder(LocalDate date) {
+    public List<CoffeeOrder> getFirstFiveOrder(LocalDate date) {
         return orders.stream()
-                .filter(order -> order.getTime().getYear() == date.getYear() && order.getTime().getDayOfYear() == date.getDayOfYear())
-                .flatMap(CoffeeOrder::getCoffesStream)
-                .collect(Collectors.toSet()).stream()
+                .filter(order -> order.getDateTime().getYear() == date.getYear() && order.getDateTime().getDayOfYear() == date.getDayOfYear())
+                .sorted(Comparator.comparing(CoffeeOrder::getDateTime))
                 .limit(5)
                 .toList();
     }
 
-    private double round2(double sum) {
-        return Math.round(sum * 100d) / 100d;
-    }
 }

@@ -13,7 +13,6 @@ public class Numbers {
 
     public Optional<Integer> min() {
         return numbers.stream().min(Integer::compareTo);
-
     }
 
     public int sum() {
@@ -21,7 +20,7 @@ public class Numbers {
     }
 
     public boolean isAllPositive() {
-        return numbers.stream().allMatch(integer -> integer > 0);
+        return numbers.stream().allMatch(number -> number > 0);
     }
 
     public List<Integer> getDistinctElements() {

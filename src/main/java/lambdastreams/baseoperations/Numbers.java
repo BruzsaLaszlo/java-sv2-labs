@@ -17,9 +17,7 @@ public class Numbers {
     }
 
     public int sum() {
-        return numbers.stream()
-                .reduce(Integer::sum)
-                .orElse(0);
+        return numbers.stream().reduce(0, Integer::sum, Integer::sum);
     }
 
     public boolean isAllPositive() {

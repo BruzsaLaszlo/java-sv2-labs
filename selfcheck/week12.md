@@ -37,10 +37,10 @@ Ezen a héten a kollekciókkal fogtok részletesebben megismerkedni.
 * [x] Keresés gyakorlati feladat
 * [x] [Rendezés videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769624-rendezes)
 * [x] Rendezés gyakorlati feladat
-* [ ] [Collections osztály (keresésen, rendezésen felüli metódusok) videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769625-collections-osztaly-keresesen-rendezesen-feluli-metodusok)
-* [ ] Collections osztály (keresésen, rendezésen felüli metódusok) gyakorlati feladat
-* [ ] [A clone() metódus, deep clone videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769626-a-clone-metodus-deep-clone)
-* [ ] A clone() metódus, deep clone gyakorlati feladat
+* [x] [Collections osztály (keresésen, rendezésen felüli metódusok) videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769625-collections-osztaly-keresesen-rendezesen-feluli-metodusok)
+* [x] Collections osztály (keresésen, rendezésen felüli metódusok) gyakorlati feladat
+* [x] [A clone() metódus, deep clone videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/10769626-a-clone-metodus-deep-clone)
+* [x] A clone() metódus, deep clone gyakorlati feladat
 
 ## Konzultációk
 
@@ -48,7 +48,7 @@ Ezen a héten a kollekciókkal fogtok részletesebben megismerkedni.
 * [x] 2022-01-10 konzultáció gyakorlati feladat
 * [x] 2022-01-11 konzultáció részvétel/videó
 * [x] 2022-01-11 konzultáció gyakorlati feladat
-* [ ] 2022-01-13 konzultáció részvétel/videó
-* [ ] 2022-01-13 konzultáció gyakorlati feladat
+* [x] 2022-01-13 konzultáció részvétel/videó
+* [x] 2022-01-13 konzultáció gyakorlati feladat
 * [ ] 2022-01-14 konzultáció részvétel/videó
 * [ ] 2022-01-14 konzultáció gyakorlati feladat

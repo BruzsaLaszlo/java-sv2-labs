@@ -1,10 +1,11 @@
 package collectionsclass;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.Collections.shuffle;
+import static java.util.stream.Collectors.toCollection;
 
 public class Lottery {
 
@@ -16,8 +17,8 @@ public class Lottery {
         var numbers = Stream
                 .iterate(1, i -> i + 1)
                 .limit(ballCount)
-                .collect(Collectors.toCollection(ArrayList::new));
-        Collections.shuffle(numbers);
+                .collect(toCollection(ArrayList::new));
+        shuffle(numbers);
         return numbers
                 .stream()
                 .limit(lotteryType)

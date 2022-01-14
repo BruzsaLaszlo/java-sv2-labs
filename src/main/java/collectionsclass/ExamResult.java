@@ -14,12 +14,11 @@ public record ExamResult(String name, int score) implements Comparable<ExamResul
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ExamResult that = (ExamResult) o;
-        return score == that.score && Objects.equals(name, that.name);
+        return score == that.score;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, score);
+        return Objects.hash(score);
     }
-
 }

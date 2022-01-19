@@ -1,22 +1,23 @@
 package lambdacomparator.cloud;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Comparator.comparing;
-import static java.util.Comparator.comparingDouble;
+import static java.util.Comparator.nullsFirst;
 
 public class Clouds {
 
     public CloudStorage alphabeticallyFirst(List<CloudStorage> cloudStorages) {
-        cloudStorages.sort(comparing(CloudStorage::getProvider, String::compareToIgnoreCase));
-        return cloudStorages.get(0);
+        return cloudStorages.stream()
+                .min(comparing(CloudStorage::getProvider, String::compareToIgnoreCase))
+                .orElseThrow(IllegalArgumentException::new);
     }
 
     public CloudStorage bestPriceForShortestPeriod(List<CloudStorage> cloudStorages) {
-        cloudStorages = new ArrayList<>(cloudStorages);
-        cloudStorages.sort(comparingDouble(CloudStorage::getPrice));
-        return cloudStorages.get(0);
+        return cloudStorages.stream()
+                .min(comparing(CloudStorage::getPeriod, nullsFirst(PayPeriod::compare))
+                        .thenComparingDouble(CloudStorage::getPrice))
+                .orElseThrow(IllegalArgumentException::new);
     }
 
     public List<CloudStorage> worstOffers(List<CloudStorage> cloudStorages) {

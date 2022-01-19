@@ -1,6 +1,5 @@
 package lambdacomparator.cloud;
 
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,11 +9,11 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 class CloudsTest {
 
-    private List<CloudStorage> storages;
-    private List<CloudStorage> storagesWithoutFree;
+    List<CloudStorage> storages;
+
+    List<CloudStorage> storagesWithoutFree;
 
     @BeforeEach
     void initStorages() {
@@ -45,7 +44,6 @@ class CloudsTest {
     @Test
     void testAlphabeticallyFirst() {
         Clouds clouds = new Clouds();
-
         CloudStorage cloudStorage = clouds.alphabeticallyFirst(storages);
 
         assertEquals("iDrive", cloudStorage.getProvider());
@@ -54,7 +52,6 @@ class CloudsTest {
     @Test
     void testBestPriceForShortestPeriodWithoutFree() {
         Clouds clouds = new Clouds();
-
         CloudStorage cloudStorage = clouds.bestPriceForShortestPeriod(storagesWithoutFree);
 
         assertEquals(1.99, cloudStorage.getPrice(), 0.0000001);
@@ -64,7 +61,6 @@ class CloudsTest {
     @Test
     void testBestPriceForShortestPeriod() {
         Clouds clouds = new Clouds();
-
         CloudStorage cloudStorage = clouds.bestPriceForShortestPeriod(storages);
 
         assertEquals(0, cloudStorage.getPrice(), 0.0000001);
@@ -73,7 +69,6 @@ class CloudsTest {
     @Test
     void testWorstOffersWithoutFree() {
         Clouds clouds = new Clouds();
-
         List<CloudStorage> worstStorages = clouds.worstOffers(storagesWithoutFree);
 
         assertEquals(3, worstStorages.size());
@@ -82,7 +77,6 @@ class CloudsTest {
     @Test
     void testWorstOffers() {
         Clouds clouds = new Clouds();
-
         List<CloudStorage> worstStorages = clouds.worstOffers(storages);
 
         assertEquals(3, worstStorages.size());
@@ -95,7 +89,6 @@ class CloudsTest {
     @Test
     void testWorstOffersWithOneProvider() {
         Clouds clouds = new Clouds();
-
         List<CloudStorage> worstStorages = clouds.worstOffers(List.of(new CloudStorage("iDrive", 2000, PayPeriod.ANNUAL, 52.12)));
 
         assertEquals(1, worstStorages.size());

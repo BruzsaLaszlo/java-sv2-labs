@@ -12,4 +12,8 @@ public enum PayPeriod {
         this.length = length;
     }
 
+    public static int compare(PayPeriod payPeriod, PayPeriod otherPayPeriod) {
+        return payPeriod.length - otherPayPeriod.length;
+    }
+
 }

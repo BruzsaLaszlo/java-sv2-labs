@@ -37,7 +37,7 @@ public class Truck {
                 .orElse(0);
     }
 
-    public String getWeightStatictics() {
+    public String getWeightStatistics() {
         if (thingsToLoad.isEmpty()) return "No cargo.";
         var stat = thingsToLoad.stream()
                 .mapToInt(Cargo::weight)

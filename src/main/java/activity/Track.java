@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,16 +18,16 @@ public class Track {
     private List<TrackPoint> trackPoints = new ArrayList<>();
 
     public void loadFromGpx(InputStream inputStream) throws IOException {
-        Pattern p = Pattern.compile("<trkpt(.*)>");
-        Pattern ele = Pattern.compile("<ele>(.*)</ele>");
         BufferedReader input = new BufferedReader(new InputStreamReader(inputStream));
         Coordinate coordinate = null;
         while (input.ready()) {
             String line = input.readLine();
-            Matcher m = p.matcher(line);
-            Matcher mEle = ele.matcher(line);
-            if (m.find()) coordinate = parseCoordinate(m.group(1));
-            if (mEle.find()) trackPoints.add(new TrackPoint(coordinate, Double.parseDouble(mEle.group(1))));
+            Optional<Coordinate> coordinateOptional = parseCoordinate(line);
+            if (coordinateOptional.isPresent())
+                coordinate = coordinateOptional.get();
+            Optional<Double> elevationOptional = parseElevation(line);
+            if (elevationOptional.isPresent())
+                trackPoints.add(new TrackPoint(coordinate, elevationOptional.get()));
         }
     }
 
@@ -108,17 +109,19 @@ public class Track {
                 .getLatitude();
     }
 
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    private Coordinate parseCoordinate(String input) {
-        Pattern lat = Pattern.compile("lat=\"(.*)\" ");
-        Matcher mLat = lat.matcher(input);
-        mLat.find();
+    private Optional<Coordinate> parseCoordinate(String line) {
+        Pattern pattern = Pattern.compile("lat=\"(.*)\" lon=\"(.*)\"");
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find())
+            return Optional.of(new Coordinate(Double.parseDouble(matcher.group(1)), Double.parseDouble(matcher.group(2))));
+        return Optional.empty();
+    }
 
-        Pattern lon = Pattern.compile("lon=\"(.*)\"");
-        Matcher mLon = lon.matcher(input);
-        mLon.find();
-
-        return new Coordinate(Double.parseDouble(mLat.group(1)), Double.parseDouble(mLon.group(1)));
+    private Optional<Double> parseElevation(String line) {
+        Pattern ele = Pattern.compile("<ele>(.*)</ele>");
+        Matcher mEle = ele.matcher(line);
+        if (mEle.find()) return Optional.of(Double.parseDouble(mEle.group(1)));
+        else return Optional.empty();
     }
 
 }

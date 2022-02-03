@@ -1,13 +1,13 @@
-package activity;
+package projects.activity;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static activity.ActivityType.BASKETBALL;
-import static activity.ActivityType.RUNNING;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static projects.activity.ActivityType.BASKETBALL;
+import static projects.activity.ActivityType.RUNNING;
 
 
 class ActivitiesTest {

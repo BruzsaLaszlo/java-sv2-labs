@@ -1,4 +1,4 @@
-package activity;
+package projects.activity;
 
 public class ActivityWithTrack implements Activity {
 

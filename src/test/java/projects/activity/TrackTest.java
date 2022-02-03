@@ -1,4 +1,4 @@
-package activity;
+package projects.activity;
 
 import org.junit.jupiter.api.Test;
 

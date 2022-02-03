@@ -1,4 +1,4 @@
-package activity;
+package projects.activity;
 
 import java.util.LinkedHashMap;
 import java.util.List;

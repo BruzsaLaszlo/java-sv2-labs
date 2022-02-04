@@ -6,8 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static projects.activity.ActivityType.BASKETBALL;
-import static projects.activity.ActivityType.RUNNING;
 
 
 class ActivitiesTest {
@@ -15,17 +13,19 @@ class ActivitiesTest {
     Track track = new Track();
 
     Activities activities = new Activities(Arrays.asList(
-            new ActivityWithTrack(track, RUNNING),
-            new ActivityWithoutTrack(BASKETBALL),
-            new ActivityWithTrack(track, RUNNING)));
+            new ActivityWithTrack(track, ActivityType.RUNNING),
+            new ActivityWithoutTrack(ActivityType.BASKETBALL),
+            new ActivityWithTrack(track, ActivityType.RUNNING)));
 
     @Test
     void testNumberOfWithTrack() {
+
         assertEquals(2, activities.numberOfTrackActivities());
     }
 
     @Test
     void testNumberOfWithoutTrack() {
+
         assertEquals(1, activities.numberOfWithoutTrackActivities());
     }
 
@@ -37,11 +37,16 @@ class ActivitiesTest {
         track.addTrackPoint(new TrackPoint(new Coordinate(3.67, -42.789), 200));
 
         List<Report> result = activities.distancesByTypes();
+        result.forEach(System.out::println);
 
-        assertEquals(ActivityType.RUNNING, result.get(0).getActivityType());
-        assertEquals(27223158, result.get(0).getDistance(), 5);
-        assertEquals(BASKETBALL, result.get(1).getActivityType());
         assertEquals(0.0, result.get(1).getDistance());
+
+        assertEquals(0.0, result.get(0).getDistance());
+
+        assertEquals(ActivityType.RUNNING, result.get(2).getActivityType());
+        assertEquals(27223158, result.get(2).getDistance(), 5);
+
+        assertEquals(ActivityType.BASKETBALL, result.get(3).getActivityType());
     }
 
 }

@@ -6,8 +6,8 @@ public class NumberOfDigits {
 
     public int getNumberOfDigits(int number) {
         int count = 0;
-        for (int j = 1, i = 1; i <= number; i++, count++, j = i)
-            while ((j /= 10) > 0)
+        for (int i = 1; i <= number; i++)
+            for (int j = i; j > 0; j /= 10)
                 count++;
         return count;
     }

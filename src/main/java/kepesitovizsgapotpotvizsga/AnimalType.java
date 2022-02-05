@@ -1,4 +1,4 @@
-package kepesitovizsga.potpotvizsga;
+package kepesitovizsgapotpotvizsga;
 
 public enum AnimalType {
 

@@ -1,4 +1,4 @@
-package kepesitovizsga.potpotvizsga;
+package kepesitovizsgapotpotvizsga;
 
 import javax.sql.DataSource;
 import java.sql.*;

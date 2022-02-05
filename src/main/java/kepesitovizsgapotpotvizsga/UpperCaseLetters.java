@@ -1,4 +1,4 @@
-package kepesitovizsga.potpotvizsga;
+package kepesitovizsgapotpotvizsga;
 
 import java.io.IOException;
 import java.nio.file.Files;

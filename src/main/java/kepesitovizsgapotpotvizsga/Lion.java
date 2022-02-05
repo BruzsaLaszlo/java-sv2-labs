@@ -1,4 +1,4 @@
-package kepesitovizsga.potpotvizsga;
+package kepesitovizsgapotpotvizsga;
 
 public class Lion extends ZooAnimal {
 

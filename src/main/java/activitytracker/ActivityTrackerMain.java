@@ -1,6 +1,6 @@
 package activitytracker;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
+import org.mariadb.jdbc.MariaDbDataSource;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -12,23 +12,23 @@ import static java.time.LocalDateTime.now;
 
 public class ActivityTrackerMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
-        Activity biking = new Activity(1, now(),
+        Activity biking = new Activity(now(),
                 "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport.",
                 BIKING);
-        Activity basketball = new Activity(1, now().minusDays(1),
+        Activity basketball = new Activity(now().minusDays(1),
                 "Basketball is a game played between two teams of five players each on a rectangular court, usually indoors.",
                 BASKETBALL);
-        Activity running = new Activity(1, now().minusDays(2),
+        Activity running = new Activity(now().minusDays(2),
                 "Running is a complex, coordinated process which involves the entire body.",
                 RUNNING);
-        Activity hiking = new Activity(1, now().plusDays(1),
+        Activity hiking = new Activity(now().plusDays(1),
                 "a long, vigorous walk, usually on trails or footpaths in the countryside.",
                 HIKING);
 
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUrl("jdbc:mysql://localhost:3306/activitytracker?useUnicode=true");
+        MariaDbDataSource dataSource = new MariaDbDataSource();
+        dataSource.setUrl("jdbc:mariadb://localhost:3306/activitytracker?useUnicode=true");
         dataSource.setUser("activitytracker");
         dataSource.setPassword("activitytracker");
 

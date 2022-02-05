@@ -4,16 +4,20 @@ import java.time.LocalDateTime;
 
 public class Activity {
 
-    private int id;
+    private long id;
     private LocalDateTime startTime;
     private String desc;
     private SportType type;
 
-    public Activity(int id, LocalDateTime startTime, String desc, SportType type) {
+    public Activity(long id, LocalDateTime startTime, String desc, SportType type) {
         this.id = id;
         this.startTime = startTime;
         this.desc = desc;
         this.type = type;
+    }
+
+    public Activity(LocalDateTime startTime, String desc, SportType type) {
+        this(0, startTime, desc, type);
     }
 
     @Override
@@ -26,7 +30,11 @@ public class Activity {
                 '}';
     }
 
-    public int getId() {
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
         return id;
     }
 

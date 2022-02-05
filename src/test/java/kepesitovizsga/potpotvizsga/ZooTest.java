@@ -41,7 +41,7 @@ class ZooTest {
 
             Flyway fw = Flyway.configure()
                     .dataSource(dataSource)
-                    .locations("filesystem:src/test/resources")
+                    .locations("filesystem:src/test/resources/kepesitovizsga.potpotvizsga")
                     .load();
             fw.clean();
             fw.migrate();

@@ -1,4 +1,4 @@
-package kepesitovizsga.potvizsga.webshop;
+package kepesitovizsgapotvizsga.webshop;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

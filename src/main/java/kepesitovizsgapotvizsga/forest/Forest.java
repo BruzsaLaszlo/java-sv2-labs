@@ -1,4 +1,4 @@
-package kepesitovizsga.potvizsga.forest;
+package kepesitovizsgapotvizsga.forest;
 
 import java.util.Collections;
 import java.util.List;

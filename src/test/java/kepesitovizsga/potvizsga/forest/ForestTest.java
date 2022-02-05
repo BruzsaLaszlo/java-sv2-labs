@@ -1,5 +1,9 @@
 package kepesitovizsga.potvizsga.forest;
 
+import kepesitovizsgapotvizsga.forest.Forest;
+import kepesitovizsgapotvizsga.forest.FoxtailPine;
+import kepesitovizsgapotvizsga.forest.Lumberjack;
+import kepesitovizsgapotvizsga.forest.WhitebarkPine;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

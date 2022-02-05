@@ -1,5 +1,6 @@
 package kepesitovizsga.potvizsga.webshop;
 
+import kepesitovizsgapotvizsga.webshop.WebshopService;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,7 @@ class WebshopServiceTest {
 
         Flyway flyway = Flyway.configure()
                 .dataSource(dataSource)
-                .locations("filesystem:src/test/resources/kepesitovizsga.potvizsga")
+                .locations("filesystem:src/test/resources/kepesitovizsgapotvizsga")
                 .load();
 
         flyway.clean();

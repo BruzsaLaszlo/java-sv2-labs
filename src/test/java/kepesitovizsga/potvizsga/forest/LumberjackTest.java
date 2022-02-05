@@ -1,5 +1,8 @@
 package kepesitovizsga.potvizsga.forest;
 
+import kepesitovizsgapotvizsga.forest.FoxtailPine;
+import kepesitovizsgapotvizsga.forest.Lumberjack;
+import kepesitovizsgapotvizsga.forest.WhitebarkPine;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

@@ -1,5 +1,6 @@
 package kepesitovizsga.potpotvizsga;
 
+import kepesitovizsgapotpotvizsga.NumberOfDigits;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,5 +1,6 @@
 package kepesitovizsga.potpotvizsga;
 
+import kepesitovizsgapotpotvizsga.*;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,7 +42,7 @@ class ZooTest {
 
             Flyway fw = Flyway.configure()
                     .dataSource(dataSource)
-                    .locations("filesystem:src/test/resources/kepesitovizsga.potpotvizsga")
+                    .locations("filesystem:src/test/resources/kepesitovizsgapotpotvizsga")
                     .load();
             fw.clean();
             fw.migrate();

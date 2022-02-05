@@ -1,5 +1,6 @@
 package kepesitovizsga.potvizsga.io;
 
+import kepesitovizsgapotvizsga.io.FileHandler;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

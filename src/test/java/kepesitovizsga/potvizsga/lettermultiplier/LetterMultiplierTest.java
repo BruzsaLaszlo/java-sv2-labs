@@ -1,5 +1,6 @@
 package kepesitovizsga.potvizsga.lettermultiplier;
 
+import kepesitovizsgapotvizsga.lettermultiplier.LetterMultiplier;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

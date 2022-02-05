@@ -1,4 +1,4 @@
-package kepesitovizsga.potvizsga.forest;
+package kepesitovizsgapotvizsga.forest;
 
 public class FoxtailPine extends Tree {
 

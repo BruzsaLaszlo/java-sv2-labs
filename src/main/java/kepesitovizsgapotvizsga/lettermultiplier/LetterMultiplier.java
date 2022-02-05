@@ -1,4 +1,4 @@
-package kepesitovizsga.potvizsga.lettermultiplier;
+package kepesitovizsgapotvizsga.lettermultiplier;
 
 import java.util.stream.Collectors;
 

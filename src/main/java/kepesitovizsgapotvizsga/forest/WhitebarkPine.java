@@ -1,4 +1,4 @@
-package kepesitovizsga.potvizsga.forest;
+package kepesitovizsgapotvizsga.forest;
 
 public class WhitebarkPine extends Tree {
 

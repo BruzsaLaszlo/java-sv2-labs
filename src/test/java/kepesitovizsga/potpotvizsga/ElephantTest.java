@@ -1,5 +1,8 @@
 package kepesitovizsga.potpotvizsga;
 
+import kepesitovizsgapotpotvizsga.AnimalType;
+import kepesitovizsgapotpotvizsga.Elephant;
+import kepesitovizsgapotpotvizsga.ZooAnimal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

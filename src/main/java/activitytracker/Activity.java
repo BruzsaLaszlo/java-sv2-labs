@@ -1,6 +1,10 @@
 package activitytracker;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 public class Activity {
 
@@ -8,16 +12,27 @@ public class Activity {
     private LocalDateTime startTime;
     private String desc;
     private SportType type;
+    private List<TrackPoint> trackPoints = new ArrayList<>();
+
+    public Activity(long id, LocalDateTime startTime, String desc, SportType type, List<TrackPoint> trackPoints) {
+        this(startTime, desc, type, trackPoints);
+        this.id = id;
+    }
 
     public Activity(long id, LocalDateTime startTime, String desc, SportType type) {
+        this(startTime, desc, type);
         this.id = id;
-        this.startTime = startTime;
-        this.desc = desc;
-        this.type = type;
+    }
+
+    public Activity(LocalDateTime startTime, String desc, SportType type, List<TrackPoint> trackPoints) {
+        this(startTime, desc, type);
+        this.trackPoints = trackPoints;
     }
 
     public Activity(LocalDateTime startTime, String desc, SportType type) {
-        this(0, startTime, desc, type);
+        this.startTime = startTime;
+        this.desc = desc;
+        this.type = type;
     }
 
     @Override
@@ -28,6 +43,27 @@ public class Activity {
                 ", desc='" + desc + '\'' +
                 ", type=" + type +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Activity activity = (Activity) o;
+        return id == activity.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    public void setTrackPoints(List<TrackPoint> trackPoints) {
+        this.trackPoints = trackPoints;
+    }
+
+    public List<TrackPoint> getTrackPoints() {
+        return Collections.unmodifiableList(trackPoints);
     }
 
     public void setId(long id) {

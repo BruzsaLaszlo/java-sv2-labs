@@ -15,10 +15,18 @@ public class ActivityDao {
     }
 
     public Activity saveActivity(Activity activity) {
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(
-                     "INSERT INTO activities (start_time, activity_desc, activity_type) VALUES (?, ?, ?);",
-                     Statement.RETURN_GENERATED_KEYS)
+        try (Connection conn = dataSource.getConnection()) {
+            conn.setAutoCommit(false);
+            return saveActivity(activity, conn);
+        } catch (SQLException e) {
+            throw new IllegalStateException("connection problem", e);
+        }
+    }
+
+    private Activity saveActivity(Activity activity, Connection conn) throws SQLException {
+        try (PreparedStatement pstmt = conn.prepareStatement(
+                "INSERT INTO activities (start_time, activity_desc, activity_type) VALUES (?, ?, ?);",
+                Statement.RETURN_GENERATED_KEYS)
         ) {
             pstmt.setTimestamp(1, Timestamp.valueOf(activity.getStartTime()));
             pstmt.setString(2, activity.getDesc());
@@ -27,9 +35,15 @@ public class ActivityDao {
                 throw new IllegalStateException("insert failed");
             }
             activity.setId(getGeneratedKey(pstmt));
+            if (!activity.getTrackPoints().isEmpty()) {
+                validateTrackPoints(activity.getTrackPoints());
+                saveTrackPoints(activity.getTrackPoints(), conn, activity.getId());
+            }
+            conn.commit();
             return activity;
-        } catch (SQLException e) {
-            throw new IllegalStateException("cant execute", e);
+        } catch (IllegalArgumentException iae) {
+            conn.rollback();
+            throw new IllegalStateException(iae.getMessage(), iae);
         }
     }
 
@@ -38,9 +52,9 @@ public class ActivityDao {
              PreparedStatement pstmt = conn.prepareStatement("select * from activities where id = ?;")
         ) {
             pstmt.setInt(1, id);
-            return getActivity(pstmt);
+            return getActivity(pstmt, conn);
         } catch (SQLException e) {
-            throw new IllegalStateException("cant execute", e);
+            throw new IllegalStateException("cant select", e);
         }
     }
 
@@ -51,30 +65,67 @@ public class ActivityDao {
         ) {
             List<Activity> result = new ArrayList<>();
             while (rs.next()) {
-                result.add(getActivity(rs));
+                result.add(getActivity(rs, conn));
             }
             return result;
         } catch (SQLException e) {
-            throw new IllegalStateException("cant execute");
+            throw new IllegalStateException("cant select", e);
         }
     }
 
-    private Activity getActivity(ResultSet rs) throws SQLException {
-        long id = rs.getLong("id");
-        LocalDateTime startTime = rs.getTimestamp("start_time").toLocalDateTime();
-        String desc = rs.getString("activity_desc");
-        SportType type = SportType.valueOf(rs.getString("activity_type"));
-        return new Activity(id, startTime, desc, type);
-    }
-
-    private Activity getActivity(PreparedStatement pstmt) {
+    private Activity getActivity(PreparedStatement pstmt, Connection conn) {
         try (ResultSet rs = pstmt.executeQuery()) {
             if (rs.next()) {
-                return getActivity(rs);
+                return getActivity(rs, conn);
             }
             throw new IllegalArgumentException("id not found");
         } catch (SQLException e) {
             throw new IllegalStateException("execute failed", e);
+        }
+    }
+
+    private Activity getActivity(ResultSet rs, Connection conn) throws SQLException {
+        long id = rs.getLong("id");
+        LocalDateTime startTime = rs.getTimestamp("start_time").toLocalDateTime();
+        String desc = rs.getString("activity_desc");
+        SportType type = SportType.valueOf(rs.getString("activity_type"));
+        List<TrackPoint> trackPoints = getTrackPoints(id, conn);
+        return new Activity(id, startTime, desc, type, trackPoints);
+    }
+
+    private List<TrackPoint> getTrackPoints(long id, Connection conn) {
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM track_point WHERE id = " + id)
+        ) {
+            List<TrackPoint> result = new ArrayList<>();
+            while (rs.next()) {
+                long tpId = rs.getLong("id");
+                LocalDateTime time = rs.getTimestamp("time").toLocalDateTime();
+                double lat = rs.getDouble("lat");
+                double lon = rs.getDouble("lon");
+                result.add(new TrackPoint(tpId, time, lat, lon));
+            }
+            return result;
+        } catch (SQLException e) {
+            throw new IllegalStateException("cant select trackpoint with id: " + id);
+        }
+    }
+
+    private void saveTrackPoints(List<TrackPoint> trackPoints, Connection conn, long id) {
+        try (PreparedStatement stmt = conn.prepareStatement(
+                "INSERT INTO track_point(time, lat, lon, activity_id) VALUES (?,?,?,?)",
+                Statement.RETURN_GENERATED_KEYS)
+        ) {
+            for (TrackPoint trackPoint : trackPoints) {
+                stmt.setTimestamp(1, Timestamp.valueOf(trackPoint.getTime()));
+                stmt.setDouble(2, trackPoint.getLat());
+                stmt.setDouble(3, trackPoint.getLon());
+                stmt.setLong(4, id);
+                stmt.executeUpdate();
+                trackPoint.setId(getGeneratedKey(stmt));
+            }
+        } catch (SQLException e) {
+            throw new IllegalStateException("cant insert", e);
         }
     }
 
@@ -85,5 +136,13 @@ public class ActivityDao {
             }
             throw new SQLException("no generated keys");
         }
+    }
+
+    private void validateTrackPoints(List<TrackPoint> trackPoints) {
+        trackPoints.forEach(tp -> {
+            if (tp.getLat() > 90 || tp.getLat() < -90 || tp.getLon() > 180 || tp.getLon() < -180) {
+                throw new IllegalArgumentException("invalid coordinates");
+            }
+        });
     }
 }

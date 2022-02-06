@@ -35,7 +35,6 @@ class ActivityDaoTest {
             new TrackPoint(now().withNano(0).minusDays(10), 14.323232, 45.324234),
             new TrackPoint(now().withNano(0).minusDays(9), 15.323232, 46.324234));
 
-
     @BeforeEach
     void setUp() throws SQLException {
 
@@ -96,5 +95,24 @@ class ActivityDaoTest {
         activityDao.saveActivity(basketball);
 
         assertEquals(2, activityDao.listActivities().size());
+    }
+
+    @Test
+    void saveImageToActivity() {
+
+        activityDao.saveActivity(biking);
+        activityDao.saveImageToActivity(1, new Image("biking.jpg"));
+        activityDao.saveActivity(basketball);
+        activityDao.saveImageToActivity(2, new Image("basketball.jpg"));
+        activityDao.saveActivity(running);
+        activityDao.saveImageToActivity(3, new Image("running.jpg"));
+
+        activityDao.saveActivity(hiking);
+        Image expected = new Image("hiking.jpg");
+        activityDao.saveImageToActivity(4, expected);
+
+        String filename = "src/test/resources/activitytracker/hiking.jpg";
+        assertArrayEquals(expected.getContent(), activityDao.loadImageToActivity(4, filename).getContent());
+
     }
 }

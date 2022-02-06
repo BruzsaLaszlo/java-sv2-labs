@@ -58,6 +58,37 @@ public class ActivityDao {
         }
     }
 
+    public void saveImageToActivity(long activityId, Image image) {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(
+                     "INSERT INTO image(content, activity_id) VALUES (?,?)",
+                     Statement.RETURN_GENERATED_KEYS)
+        ) {
+            Blob blob = conn.createBlob();
+            blob.setBytes(1, image.getContent());
+            stmt.setBlob(1, blob);
+            stmt.setLong(2, activityId);
+            stmt.executeUpdate();
+            image.setId(getGeneratedKey(stmt));
+        } catch (SQLException e) {
+            throw new IllegalStateException("insert failed", e);
+        }
+    }
+
+    public Image loadImageToActivity(long activityId, String filename) {
+        try (Connection conn = dataSource.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM image WHERE activity_id = " + activityId)
+        ) {
+            rs.next();
+            long id = rs.getLong("id");
+            Blob blob = rs.getBlob("content");
+            return new Image(id, filename, blob.getBinaryStream());
+        } catch (SQLException e) {
+            throw new IllegalStateException("cant select", e);
+        }
+    }
+
     public List<Activity> listActivities() {
         try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement();

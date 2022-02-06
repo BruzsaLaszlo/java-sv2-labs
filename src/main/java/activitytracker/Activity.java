@@ -13,6 +13,7 @@ public class Activity {
     private String desc;
     private SportType type;
     private List<TrackPoint> trackPoints = new ArrayList<>();
+    private Image image;
 
     public Activity(long id, LocalDateTime startTime, String desc, SportType type, List<TrackPoint> trackPoints) {
         this(startTime, desc, type, trackPoints);
@@ -64,6 +65,14 @@ public class Activity {
 
     public List<TrackPoint> getTrackPoints() {
         return Collections.unmodifiableList(trackPoints);
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public void setId(long id) {

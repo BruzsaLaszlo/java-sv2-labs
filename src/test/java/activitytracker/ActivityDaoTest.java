@@ -33,7 +33,9 @@ class ActivityDaoTest {
             new TrackPoint(now().withNano(0).minusDays(12), 12.323232, 43.324234),
             new TrackPoint(now().withNano(0).minusDays(11), 13.323232, 44.324234),
             new TrackPoint(now().withNano(0).minusDays(10), 14.323232, 45.324234),
-            new TrackPoint(now().withNano(0).minusDays(9), 15.323232, 46.324234));
+            new TrackPoint(now().withNano(0).minusDays(9), 16.323232, 46.324234),
+            new TrackPoint(now().withNano(0).minusDays(8), 17.323232, 47.324234),
+            new TrackPoint(now().withNano(0).minusDays(7), 18.323232, 48.324234));
 
     @BeforeEach
     void setUp() throws SQLException {
@@ -113,6 +115,19 @@ class ActivityDaoTest {
 
         String filename = "src/test/resources/activitytracker/hiking.jpg";
         assertArrayEquals(expected.getContent(), activityDao.loadImageToActivity(4, filename).getContent());
+
+    }
+
+    @Test
+    void someTrackPoints() {
+        hiking.setTrackPoints(szepenSorban);
+        activityDao.saveActivity(hiking);
+
+        var actual = activityDao.someTrackPoints(1);
+
+        assertEquals(12, actual.get(0).getLat(), 0.4);
+        assertEquals(14, actual.get(1).getLat(), 0.4);
+        assertEquals(18, actual.get(2).getLat(), 0.4);
 
     }
 }

@@ -6,6 +6,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.sql.ResultSet.CONCUR_READ_ONLY;
+import static java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE;
+
 public class ActivityDao {
 
     private DataSource dataSource;
@@ -89,6 +92,24 @@ public class ActivityDao {
         }
     }
 
+    public List<TrackPoint> someTrackPoints(long activityId) {
+        try (Connection conn = dataSource.getConnection();
+             Statement stmt = conn.createStatement(TYPE_SCROLL_INSENSITIVE, CONCUR_READ_ONLY);
+             ResultSet rs = stmt.executeQuery("SELECT * FROM track_point WHERE activity_id=" + activityId)
+        ) {
+            rs.first();
+            TrackPoint first = getTrackPoint(rs);
+            rs.last();
+            int lastRow = rs.getRow();
+            TrackPoint last = getTrackPoint(rs);
+            rs.absolute(lastRow / 2);
+            TrackPoint middle = getTrackPoint(rs);
+            return List.of(first, middle, last);
+        } catch (SQLException e) {
+            throw new IllegalStateException("cant select", e);
+        }
+    }
+
     public List<Activity> listActivities() {
         try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement();
@@ -130,16 +151,20 @@ public class ActivityDao {
         ) {
             List<TrackPoint> result = new ArrayList<>();
             while (rs.next()) {
-                long tpId = rs.getLong("id");
-                LocalDateTime time = rs.getTimestamp("time").toLocalDateTime();
-                double lat = rs.getDouble("lat");
-                double lon = rs.getDouble("lon");
-                result.add(new TrackPoint(tpId, time, lat, lon));
+                result.add(getTrackPoint(rs));
             }
             return result;
         } catch (SQLException e) {
             throw new IllegalStateException("cant select trackpoint with id: " + id);
         }
+    }
+
+    private TrackPoint getTrackPoint(ResultSet rs) throws SQLException {
+        long tpId = rs.getLong("id");
+        LocalDateTime time = rs.getTimestamp("time").toLocalDateTime();
+        double lat = rs.getDouble("lat");
+        double lon = rs.getDouble("lon");
+        return new TrackPoint(tpId, time, lat, lon);
     }
 
     private void saveTrackPoints(List<TrackPoint> trackPoints, Connection conn, long id) {

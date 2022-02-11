@@ -1,15 +1,12 @@
 package projects.activity;
 
-import java.io.BufferedReader;
+import io.jenetics.jpx.GPX;
+import io.jenetics.jpx.TrackSegment;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static java.util.Comparator.comparing;
 
@@ -17,18 +14,14 @@ public class Track {
 
     private List<TrackPoint> trackPoints = new ArrayList<>();
 
-    public void loadFromGpx(InputStream inputStream) throws IOException {
-        BufferedReader input = new BufferedReader(new InputStreamReader(inputStream));
-        Coordinate coordinate = null;
-        while (input.ready()) {
-            String line = input.readLine();
-            Optional<Coordinate> coordinateOptional = parseCoordinate(line);
-            if (coordinateOptional.isPresent())
-                coordinate = coordinateOptional.get();
-            Optional<Double> elevationOptional = parseElevation(line);
-            if (elevationOptional.isPresent())
-                trackPoints.add(new TrackPoint(coordinate, elevationOptional.get()));
-        }
+    public void loadFromGpx(String filename) throws IOException {
+        trackPoints = GPX.read(filename).tracks()
+                .flatMap(io.jenetics.jpx.Track::segments)
+                .flatMap(TrackSegment::points)
+                .map(wayPoint -> new TrackPoint(
+                        new Coordinate(wayPoint.getLatitude().doubleValue(), wayPoint.getLongitude().doubleValue()),
+                        wayPoint.getElevation().get().doubleValue()))
+                .toList();
     }
 
     public void addTrackPoint(TrackPoint trackPoint) {
@@ -107,21 +100,6 @@ public class Track {
                 .min(comparing(Coordinate::getLatitude))
                 .orElseThrow(IllegalArgumentException::new)
                 .getLatitude();
-    }
-
-    private Optional<Coordinate> parseCoordinate(String line) {
-        Pattern pattern = Pattern.compile("lat=\"(.*)\" lon=\"(.*)\"");
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find())
-            return Optional.of(new Coordinate(Double.parseDouble(matcher.group(1)), Double.parseDouble(matcher.group(2))));
-        return Optional.empty();
-    }
-
-    private Optional<Double> parseElevation(String line) {
-        Pattern ele = Pattern.compile("<ele>(.*)</ele>");
-        Matcher mEle = ele.matcher(line);
-        if (mEle.find()) return Optional.of(Double.parseDouble(mEle.group(1)));
-        else return Optional.empty();
     }
 
 }

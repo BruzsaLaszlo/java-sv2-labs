@@ -20,3 +20,14 @@ group by foldrajzi_hely;
 select orszag
 from orszagok
 where foldrajzi_hely like 'Nyugat-Európa';
+
+select foldrajzi_hely, sum(nepesseg) s
+from orszagok
+group by foldrajzi_hely
+having s > 2000
+order by s desc;
+
+SELECT COUNT(country) c, foldrajzi_hely, country
+FROM orszagok
+GROUP BY foldrajzi_hely
+HAVING c = 1;

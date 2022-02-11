@@ -4,6 +4,7 @@ import io.jenetics.jpx.GPX;
 import io.jenetics.jpx.TrackSegment;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,8 +15,8 @@ public class Track {
 
     private List<TrackPoint> trackPoints = new ArrayList<>();
 
-    public void loadFromGpx(String filename) throws IOException {
-        trackPoints = GPX.read(filename).tracks()
+    public void loadFromGpx(InputStream is) throws IOException {
+        trackPoints = GPX.read(is).tracks()
                 .flatMap(io.jenetics.jpx.Track::segments)
                 .flatMap(TrackSegment::points)
                 .map(wayPoint -> new TrackPoint(

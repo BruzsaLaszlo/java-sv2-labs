@@ -1,13 +1,14 @@
 package projects.activity;
 
-import io.jenetics.jpx.GPX;
-import io.jenetics.jpx.TrackSegment;
-
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.util.Comparator.comparing;
 
@@ -16,13 +17,23 @@ public class Track {
     private List<TrackPoint> trackPoints = new ArrayList<>();
 
     public void loadFromGpx(InputStream is) throws IOException {
-        trackPoints = GPX.read(is).tracks()
-                .flatMap(io.jenetics.jpx.Track::segments)
-                .flatMap(TrackSegment::points)
-                .map(wayPoint -> new TrackPoint(
-                        new Coordinate(wayPoint.getLatitude().doubleValue(), wayPoint.getLongitude().doubleValue()),
-                        wayPoint.getElevation().get().doubleValue()))
-                .toList();
+
+        Pattern pc = Pattern.compile("<trkpt lat=\"([.0-9]+)\" lon=\"([.0-9]+)\">");
+        Pattern pe = Pattern.compile("<ele>([.0-9]+)</ele>");
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        while (reader.ready()) {
+            Matcher mc = pc.matcher(reader.readLine().trim());
+            if (mc.find()) {
+                double lat = mc.group(1).transform(Double::parseDouble);
+                double lon = mc.group(2).transform(Double::parseDouble);
+                Matcher me = pe.matcher(reader.readLine().trim());
+                me.find();
+                double ele = me.group(1).transform(Double::parseDouble);
+                trackPoints.add(new TrackPoint(new Coordinate(lat, lon), ele));
+            }
+        }
+
     }
 
     public void addTrackPoint(TrackPoint trackPoint) {

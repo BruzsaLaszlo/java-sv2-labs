@@ -1,3 +1,5 @@
+# SELECT GROUP_CONCAT(SCHEMA_NAME SEPARATOR ' ') as DBs FROM information_schema.SCHEMATA WHERE SCHEMA_NAME NOT IN ('mysql','information_schema','performance_schema','sys');
+
 -- activitytracker
 drop database if exists activitytracker;
 create schema activitytracker;
@@ -14,6 +16,15 @@ create schema employees;
 drop user if exists 'employees'@'%';
 CREATE USER 'employees'@'%' IDENTIFIED BY 'employees';
 GRANT ALL PRIVILEGES ON employees.* TO 'employees'@'%';
+
+
+-- exam
+drop database if exists exam;
+create schema exam;
+
+drop user if exists 'exam'@'%';
+CREATE USER 'exam'@'%' IDENTIFIED BY 'exam';
+GRANT ALL PRIVILEGES ON exam.* TO 'exam'@'%';
 
 
 -- dogtypes

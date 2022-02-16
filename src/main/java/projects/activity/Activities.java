@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.summingDouble;
@@ -22,22 +21,14 @@ public class Activities {
     }
 
     public List<Report> distancesByTypes() {
-        Map<ActivityType, Double> groupBy = new TreeMap<>();
+        Map<ActivityType, Double> groupBy = activities.stream()
+                .collect(groupingBy(
+                        Activity::getType,
+                        TreeMap::new,
+                        summingDouble(Activity::getDistance)));
 
-        groupBy.putAll(
-                Arrays.stream(ActivityType.values())
-                        .collect(Collectors.toMap(
-                                activityType -> activityType, activityType -> 0d)));
-
-        groupBy.putAll(
-                activities.stream()
-                        .collect(groupingBy(
-                                Activity::getType,
-                                TreeMap::new,
-                                summingDouble(Activity::getDistance))));
-
-        return groupBy.entrySet().stream()
-                .map(entry -> new Report(entry.getKey(), entry.getValue()))
+        return Arrays.stream(ActivityType.values())
+                .map(type -> new Report(type, groupBy.getOrDefault(type, 0d)))
                 .toList();
     }
 

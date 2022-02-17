@@ -1,6 +1,6 @@
 package jpa;
 
-public enum EmployeeType {
+public enum WorkTimeType {
 
     FULL_TIME, HALF_TIME
 

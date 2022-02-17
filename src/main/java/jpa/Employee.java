@@ -1,30 +1,21 @@
 package jpa;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-
-import static jpa.EmployeeType.FULL_TIME;
+import java.util.Map;
+import java.util.Set;
 
 @Entity
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "employees")
 public class Employee {
-
-    public Employee(String name) {
-        this.name = name;
-        employeeType = FULL_TIME;
-    }
-
-    public Employee(String name, LocalDate dateOfBirth, EmployeeType employeeType) {
-        this(name);
-        this.dateOfBirth = dateOfBirth;
-        this.employeeType = employeeType;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,12 +26,29 @@ public class Employee {
     @Column(name = "nev", length = 100, nullable = false)
     private String name;
 
-    @Column(name = "dateOfBirth")
+    @ElementCollection
+    @CollectionTable(name = "nick_names", joinColumns = @JoinColumn(name = "emp_id"))
+    @Column(name = "nick_name")
+    private Set<String> nickNames;
+
+    @ElementCollection
+    @CollectionTable(name = "vacations", joinColumns = @JoinColumn(name = "emp_id"))
+    @AttributeOverride(name = "startTime", column = @Column(name = "start_time"))
+    @AttributeOverride(name = "days", column = @Column(name = "vacation_days"))
+    private Set<Vacation> vacations = new java.util.LinkedHashSet<>();
+
+    @ElementCollection
+    @CollectionTable(name = "phones", joinColumns = @JoinColumn(name = "emp_id"))
+    @MapKeyColumn(name = "phone_type")
+    @Column(name = "phone_number")
+    private Map<String, String> phonesNumbers;
+
+    @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
-    private EmployeeType employeeType;
+    private WorkTimeType workTimeType;
 
 
 }

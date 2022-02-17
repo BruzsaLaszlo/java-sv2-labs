@@ -4,11 +4,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
-public class EmployeesDao {
+public class EmployeesRepository {
 
     EntityManagerFactory factory;
 
-    public EmployeesDao(EntityManagerFactory entityManagerFactory) {
+    public EmployeesRepository(EntityManagerFactory entityManagerFactory) {
         factory = entityManagerFactory;
     }
 
@@ -43,6 +43,24 @@ public class EmployeesDao {
         return found;
     }
 
+    public Employee findEmployeeWithPhones(long id) {
+        EntityManager entityManager = factory.createEntityManager();
+
+        String sql = """
+                SELECT e
+                FROM Employee e
+                    LEFT JOIN FETCH e.phonesNumbers
+                WHERE e.id = :id
+                """;
+        Employee employee = entityManager
+                .createQuery(sql, Employee.class)
+                .setParameter("id", id)
+                .getSingleResult();
+
+        entityManager.close();
+        return employee;
+    }
+
     public void changeName(long id, String newName) {
         EntityManager entityManager = factory.createEntityManager();
 
@@ -57,12 +75,33 @@ public class EmployeesDao {
     public List<Employee> listEmployees() {
         EntityManager entityManager = factory.createEntityManager();
 
-        var result =
-                entityManager.createQuery("SELECT e FROM Employee e", Employee.class).getResultList();
+        var result = entityManager
+                .createQuery("SELECT e FROM Employee e", Employee.class)
+                .getResultList();
 
         entityManager.close();
 
         return result;
     }
 
+    public Employee findEmployeesWithAllAttributes(Long id) {
+        EntityManager entityManager = factory.createEntityManager();
+
+        String sql = """
+                SELECT e
+                FROM Employee e
+                    LEFT JOIN FETCH e.phonesNumbers
+                    LEFT JOIN FETCH e.nickNames
+                    LEFT JOIN FETCH e.vacations
+                WHERE e.id = :id
+                """;
+        var result = entityManager
+                .createQuery(sql, Employee.class)
+                .setParameter("id", id)
+                .getSingleResult();
+
+        entityManager.close();
+
+        return result;
+    }
 }

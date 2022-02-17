@@ -27,6 +27,15 @@ CREATE USER 'exam'@'%' IDENTIFIED BY 'exam';
 GRANT ALL PRIVILEGES ON exam.* TO 'exam'@'%';
 
 
+-- dictionary
+drop database if exists dictionary;
+create schema dictionary;
+
+drop user if exists 'dictionary'@'%';
+CREATE USER 'dictionary'@'%' IDENTIFIED BY 'dictionary';
+GRANT ALL PRIVILEGES ON dictionary.* TO 'dictionary'@'%';
+
+
 -- dogtypes
 drop database if exists dogtypes;
 create schema dogtypes;

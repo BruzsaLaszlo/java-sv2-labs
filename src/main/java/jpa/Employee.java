@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.Set;
 
+@Log4j2
 @Entity
 @Getter
 @NoArgsConstructor
@@ -19,7 +21,7 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true, insertable = false)
     private Long id;
 
     @Setter
@@ -35,7 +37,7 @@ public class Employee {
     @CollectionTable(name = "vacations", joinColumns = @JoinColumn(name = "emp_id"))
     @AttributeOverride(name = "startTime", column = @Column(name = "start_time"))
     @AttributeOverride(name = "days", column = @Column(name = "vacation_days"))
-    private Set<Vacation> vacations = new java.util.LinkedHashSet<>();
+    private Set<Vacation> vacations;
 
     @ElementCollection
     @CollectionTable(name = "phones", joinColumns = @JoinColumn(name = "emp_id"))
@@ -50,5 +52,42 @@ public class Employee {
     @Column(name = "type")
     private WorkTimeType workTimeType;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    @PrePersist
+    private void prePersist() {
+        log.info(name + " before persist");
+    }
+
+    @PostPersist
+    private void postPersist() {
+        log.info(name + " after persist");
+    }
+
+    @PreRemove
+    private void preRemove() {
+        log.info(name + " will be removed");
+    }
+
+    @PostRemove
+    private void postRemove() {
+        log.info(name + " was removed");
+    }
+
+    @PreUpdate
+    private void preUpdate() {
+        log.info(name + " before persist");
+    }
+
+    @PostUpdate
+    private void postUpdate() {
+        log.info(name + " after update");
+    }
+
+    @PostLoad
+    private void postLoad() {
+        log.info(name + " after load");
+    }
 }

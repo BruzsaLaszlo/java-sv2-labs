@@ -20,11 +20,11 @@ Ezen a héten azt fogjátok megtanulni, hogyan lehet adatbázist kezelni Javabó
 
 ## Konzultációk
 
-* [ ] 2022-02-14 konzultáció részvétel/videó
-* [ ] 2022-02-14 konzultáció gyakorlati feladat
-* [ ] 2022-02-15 konzultáció részvétel/videó
-* [ ] 2022-02-15 konzultáció gyakorlati feladat
-* [ ] 2022-02-17 konzultáció részvétel/videó
-* [ ] 2022-02-17 konzultáció gyakorlati feladat
-* [ ] 2022-02-18 konzultáció részvétel/videó
-* [ ] 2022-02-18 konzultáció gyakorlati feladat
+* [x] 2022-02-14 konzultáció részvétel/videó
+* [x] 2022-02-14 konzultáció gyakorlati feladat
+* [x] 2022-02-15 konzultáció részvétel/videó
+* [x] 2022-02-15 konzultáció gyakorlati feladat
+* [x] 2022-02-17 konzultáció részvétel/videó
+* [x] 2022-02-17 konzultáció gyakorlati feladat
+* [x] 2022-02-18 konzultáció részvétel/videó
+* [x] 2022-02-18 konzultáció gyakorlati feladat

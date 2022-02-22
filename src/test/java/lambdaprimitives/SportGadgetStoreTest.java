@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,7 +39,7 @@ class SportGadgetStoreTest {
 
     @Test
     void getNumberOfProductsForEmptyList() {
-        SportGadgetStore store = new SportGadgetStore(Collections.EMPTY_LIST);
+        SportGadgetStore store = new SportGadgetStore(Collections.emptyList());
 
         assertEquals(0, store.getNumberOfProducts());
     }
@@ -54,7 +53,7 @@ class SportGadgetStoreTest {
 
     @Test
     void getAveragePriceForEmptyList() {
-        SportGadgetStore store = new SportGadgetStore(Collections.EMPTY_LIST);
+        SportGadgetStore store = new SportGadgetStore(Collections.emptyList());
 
         assertEquals(0.0, store.getAveragePrice());
     }
@@ -69,14 +68,14 @@ class SportGadgetStoreTest {
 
     @Test
     void getExpensiveProductStatisticsForEmptyList() {
-        SportGadgetStore store = new SportGadgetStore(Collections.EMPTY_LIST);
+        SportGadgetStore store = new SportGadgetStore(Collections.emptyList());
 
         assertEquals("Nincs ilyen termék.", store.getExpensiveProductStatistics(100.0));
     }
 
     @Test
     void getExpensiveProductStatisticsWithZeroProduct() {
-        SportGadgetStore store = new SportGadgetStore(Arrays.asList(new Product("Tennis ball", 2.47, 138)));
+        SportGadgetStore store = new SportGadgetStore(List.of(new Product("Tennis ball", 2.47, 138)));
 
         assertEquals("Nincs ilyen termék.", store.getExpensiveProductStatistics(100.0));
     }

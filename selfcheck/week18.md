@@ -14,11 +14,11 @@ adatbázist kezelni Javaból, Spring JDBCTemplate technológia segítségével.
 
 ## Konzultációk
 
-* [ ] 2022-02-21 konzultáció részvétel/videó
-* [ ] 2022-02-21 konzultáció gyakorlati feladat
-* [ ] 2022-02-22 konzultáció részvétel/videó
-* [ ] 2022-02-22 konzultáció gyakorlati feladat
-* [ ] 2022-02-24 konzultáció részvétel/videó
-* [ ] 2022-02-24 konzultáció gyakorlati feladat
-* [ ] 2022-02-25 konzultáció részvétel/videó
-* [ ] 2022-02-25 konzultáció gyakorlati feladat
+* [x] 2022-02-21 konzultáció részvétel/videó
+* [x] 2022-02-21 konzultáció gyakorlati feladat
+* [x] 2022-02-22 konzultáció részvétel/videó
+* [x] 2022-02-22 konzultáció gyakorlati feladat
+* [x] 2022-02-24 konzultáció részvétel/videó
+* [x] 2022-02-24 konzultáció gyakorlati feladat
+* [x] 2022-02-25 konzultáció részvétel/videó
+* [x] 2022-02-25 konzultáció gyakorlati feladat

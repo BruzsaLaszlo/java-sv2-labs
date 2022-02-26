@@ -26,7 +26,7 @@ public class ActivityDaoWithJdbcTemplate {
     public Activity saveActivity(Activity activity) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(con -> getActivityPreparedStatement(activity, con), keyHolder);
-        long activityId = Objects.requireNonNull(keyHolder.getKey()).longValue();
+        long activityId = Objects.requireNonNull(keyHolder.getKey(), "no generated key").longValue();
         activity.setId(activityId);
         saveTrackPoints(activity.getTrackPoints(), activityId);
         return activity;
@@ -52,11 +52,11 @@ public class ActivityDaoWithJdbcTemplate {
     }
 
     public Activity findActivityById(long id) {
-        return jdbcTemplate.queryForObject("SELECT * FROM activities WHERE id =" + id, this::getActivity);
+        return jdbcTemplate.queryForObject("SELECT * FROM activities WHERE id =?", this::getActivity, id);
     }
 
     public List<Activity> listActivities() {
-        return jdbcTemplate.queryForStream("SELECT * FROM activities", this::getActivity).toList();
+        return jdbcTemplate.query("SELECT * FROM activities", this::getActivity);
     }
 
     private Activity getActivity(ResultSet rs, int rowNum) throws SQLException {
@@ -70,7 +70,7 @@ public class ActivityDaoWithJdbcTemplate {
 
     private List<TrackPoint> getTrackPoints(long activityId) {
         String sql = "SELECT * FROM track_point WHERE activity_id = " + activityId;
-        return jdbcTemplate.queryForStream(sql, this::getTrackPoint).toList();
+        return jdbcTemplate.query(sql, this::getTrackPoint);
     }
 
     private TrackPoint getTrackPoint(ResultSet rs, int rowNum) throws SQLException {
